@@ -35,11 +35,21 @@
         
         * { box-sizing: border-box; margin: 0; padding: 0; }
         
+        html, body {
+            overflow-x: hidden;
+            max-width: 100%;
+            width: 100%;
+        }
+
         body {
             font-family: var(--font-body);
             color: var(--ink);
             background-color: var(--paper);
             line-height: 1.6;
+            overflow-x: hidden;
+            max-width: 100%;
+            width: 100%;
+            position: relative;
         }
         
         h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); color: var(--navy); }
@@ -585,62 +595,168 @@
         <div id="contact-map"></div>
     </section>
 
-    <!-- FAQ Section -->
-    <section class="faq-section">
-        <h2 class="section-title">Frequently Asked Questions</h2>
-        <div class="faq-container">
-            <div class="faq-item">
-                <div class="faq-question">
-                    What areas in Ujjain do you cover?
-                    <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+    <!-- === FREQUENTLY ASKED QUESTIONS (Unified with Home) === -->
+    <section class="faq-accordion-section" id="contact-faq">
+        <div class="faq-accordion-inner">
+            <h2 class="faq-accordion-title">
+                Frequently Asked<br>Questions
+            </h2>
+
+            <div class="faq-accordion-grid">
+                <!-- Column 1 -->
+                <div class="flex-col">
+                    <!-- Q1 -->
+                    <div class="faq-accordion-item">
+                        <button type="button" class="faq-question-btn" aria-expanded="false">
+                            <span>How do I buy a property through Shri Manibhadra Real Estate Brokers?</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="faq-chevron">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-answer-panel">
+                            <p>
+                                Browse our verified listings on our portal, filter by locality or budget, and click 'Enquire' or 'WhatsApp Us'. Our dedicated advisor will schedule a private site visit, verify legal titles, and assist you through negotiation and registry.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Q2 -->
+                    <div class="faq-accordion-item">
+                        <button type="button" class="faq-question-btn" aria-expanded="false">
+                            <span>How can I list my property for sale or rent?</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="faq-chevron">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-answer-panel">
+                            <p>
+                                You can list your property for free right from our home page hero section under 'Sell Property' or by contacting us on WhatsApp. Our team will verify property documents, perform a free market valuation, and market your property to over 1,000+ active buyers.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Q3 -->
+                    <div class="faq-accordion-item">
+                        <button type="button" class="faq-question-btn" aria-expanded="false">
+                            <span>Are the property listings verified?</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="faq-chevron">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-answer-panel">
+                            <p>
+                                Yes, 100% of our listings undergo physical inspection and legal title scrutiny, including registry checks, RERA approvals, Nazul/diverted status, and local municipal clearances before being published.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Q4 -->
+                    <div class="faq-accordion-item">
+                        <button type="button" class="faq-question-btn" aria-expanded="false">
+                            <span>Do you help with home loans?</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="faq-chevron">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-answer-panel">
+                            <p>
+                                Yes. We have tie-ups with leading nationalized and private banks (SBI, HDFC, ICICI, Bank of Baroda, etc.) in Ujjain to assist you with quick loan sanctioning, lowest interest rates, and minimal paperwork.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Q5 -->
+                    <div class="faq-accordion-item">
+                        <button type="button" class="faq-question-btn" aria-expanded="false">
+                            <span>Which cities and areas does Shri Manibhadra Real Estate Brokers cover?</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="faq-chevron">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-answer-panel">
+                            <p>
+                                We specialize in Ujjain and the surrounding Indore-Ujjain growth corridor. Key areas include Nanakheda, Freeganj, Sethi Nagar, Jawahar Nagar, Mahakal Commercial Corridor, Dewas Road, Indore Road, and Sanwer Road.
+                            </p>
+                        </div>
+                    </div>
                 </div>
-                <div class="faq-answer">
-                    <p style="padding-top:10px;">We cover major prime localities including Nanakheda, Jawahar Nagar, Malipura, Freeganj, Mahananda Nagar, Indore-Ujjain Highway, Dewas Road, and Agar Road.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">
-                    Do you charge any brokerage fees?
-                    <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-                </div>
-                <div class="faq-answer">
-                    <p style="padding-top:10px;">Yes, we charge a standard and completely transparent brokerage fee based on the transaction value. All our fees are discussed upfront before any agreement is signed.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">
-                    How can I list my property with you?
-                    <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-                </div>
-                <div class="faq-answer">
-                    <p style="padding-top:10px;">You can easily list your property by clicking on the 'Post Property Free' button in our menu, or by filling out the contact form with your property details. Our agent will verify and list it for you.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">
-                    Do you help with legal documentation and registry?
-                    <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-                </div>
-                <div class="faq-answer">
-                    <p style="padding-top:10px;">Yes! We provide full end-to-end support including legal verification, documentation preparation, and complete assistance during the property registry process.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">
-                    Can NRIs buy property through your firm?
-                    <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-                </div>
-                <div class="faq-answer">
-                    <p style="padding-top:10px;">Absolutely. We offer specialized international property services for NRIs looking to invest in Ujjain, ensuring a smooth remote transaction process.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">
-                    What types of properties do you deal in?
-                    <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-                </div>
-                <div class="faq-answer">
-                    <p style="padding-top:10px;">We deal in a wide variety of properties including Residential (Flats, Villas, Plots), Commercial (Shops, Offices), and Agricultural lands across all our 19 service types.</p>
+
+                <!-- Column 2 -->
+                <div class="flex-col">
+                    <!-- Q6 -->
+                    <div class="faq-accordion-item">
+                        <button type="button" class="faq-question-btn" aria-expanded="false">
+                            <span>I want to invest in another city, can you help?</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="faq-chevron">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-answer-panel">
+                            <p>
+                                Yes, through our trusted institutional network and associate brokers across Madhya Pradesh (including Indore, Bhopal, and Dewas), we can assist you with verified commercial, residential, and agricultural investment opportunities.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Q7 -->
+                    <div class="faq-accordion-item">
+                        <button type="button" class="faq-question-btn" aria-expanded="false">
+                            <span>Are there any charges for buyers?</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="faq-chevron">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-answer-panel">
+                            <p>
+                                Browsing listings, initial property consultations, and scheduling site visits are completely free. Standard transparent brokerage applies only upon successful closure and legal registry of the property deal.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Q8 -->
+                    <div class="faq-accordion-item">
+                        <button type="button" class="faq-question-btn" aria-expanded="false">
+                            <span>Can I schedule a site visit before buying?</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="faq-chevron">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-answer-panel">
+                            <p>
+                                Yes, we provide free private site visits accompanied by our senior property consultants at your convenient time, 7 days a week.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Q9 -->
+                    <div class="faq-accordion-item">
+                        <button type="button" class="faq-question-btn" aria-expanded="false">
+                            <span>Do you deal in commercial and investment properties?</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="faq-chevron">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-answer-panel">
+                            <p>
+                                Yes, we handle commercial retail shops, office spaces, showrooms, highway-facing land parcels, agricultural land, and warehouse spaces across prime commercial hubs in Ujjain.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Q10 -->
+                    <div class="faq-accordion-item">
+                        <button type="button" class="faq-question-btn" aria-expanded="false">
+                            <span>What legal checks and title verifications do you perform?</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="faq-chevron">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-answer-panel">
+                            <p>
+                                We conduct a comprehensive 30-year chain of title search, verify municipal encumbrance certificates (EC), check diversion/T&CP/RERA approvals, and ensure there are no legal disputes or pending bank mortgages.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -737,14 +853,15 @@
         </div>
     </footer>
 
-    <!-- Floating Call (above WhatsApp) -->
-    <a href="tel:+919876543210" class="floating-call" aria-label="Call Now">
-        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    <!-- === FLOATING ACTION BUTTONS === -->
+    <!-- Floating Call Button (above WhatsApp) -->
+    <a href="tel:+919876543210" class="floating-call-btn call-pulse" aria-label="Call Now">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
     </a>
 
-    <!-- Floating WhatsApp -->
-    <a href="https://wa.me/919876543210" target="_blank" class="floating-wa" aria-label="Chat on WhatsApp">
-        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/919876543210" target="_blank" class="floating-wa-btn whatsapp-pulse" aria-label="Chat on WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
     </a>
 
     <!-- Leaflet JS -->
@@ -771,15 +888,38 @@
                 .openPopup();
 
             // FAQ Accordion
-            var faqs = document.querySelectorAll('.faq-item');
-            faqs.forEach(function(faq) {
-                var q = faq.querySelector('.faq-question');
-                q.addEventListener('click', function() {
-                    var isActive = faq.classList.contains('active');
-                    // Close all others
-                    faqs.forEach(f => f.classList.remove('active'));
-                    if(!isActive) {
-                        faq.classList.add('active');
+            var faqItems = document.querySelectorAll('.faq-accordion-item');
+            faqItems.forEach(function(item) {
+                var btn = item.querySelector('.faq-question-btn');
+                var panel = item.querySelector('.faq-answer-panel');
+                var chevron = item.querySelector('.faq-chevron');
+                if (!btn || !panel) return;
+
+                btn.addEventListener('click', function() {
+                    var isOpen = btn.getAttribute('aria-expanded') === 'true';
+
+                    // Close all other items
+                    faqItems.forEach(function(otherItem) {
+                        if (otherItem !== item) {
+                            var otherBtn = otherItem.querySelector('.faq-question-btn');
+                            var otherPanel = otherItem.querySelector('.faq-answer-panel');
+                            var otherChevron = otherItem.querySelector('.faq-chevron');
+                            if (otherBtn && otherPanel) {
+                                otherBtn.setAttribute('aria-expanded', 'false');
+                                otherPanel.style.maxHeight = null;
+                                if (otherChevron) otherChevron.classList.remove('rotate-180');
+                            }
+                        }
+                    });
+
+                    if (isOpen) {
+                        btn.setAttribute('aria-expanded', 'false');
+                        panel.style.maxHeight = null;
+                        if (chevron) chevron.classList.remove('rotate-180');
+                    } else {
+                        btn.setAttribute('aria-expanded', 'true');
+                        panel.style.maxHeight = panel.scrollHeight + 'px';
+                        if (chevron) chevron.classList.add('rotate-180');
                     }
                 });
             });
