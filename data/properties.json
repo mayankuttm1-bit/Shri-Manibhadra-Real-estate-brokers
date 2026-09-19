@@ -1,0 +1,178 @@
+[
+  {
+    "id": "prop-ujj-001",
+    "title": "Emerald Horizon Luxury 3 BHK Flat",
+    "slug": "emerald-horizon-luxury-3-bhk-flat",
+    "category": "residential",
+    "type": "Flat",
+    "price": 14500000,
+    "priceDisplay": "₹1.45 Cr",
+    "pricePerSqft": "₹6,041/sq.ft",
+    "areaSqft": 2400,
+    "bedrooms": 3,
+    "bathrooms": 3,
+    "locality": "Nanakheda, Ujjain",
+    "address": "Opp. Shyama Prasad Mukherjee Complex, Nanakheda, Ujjain, MP - 456001",
+    "coordinates": {
+      "lat": 23.1685,
+      "lng": 75.7915
+    },
+    "images": [
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80"
+    ],
+    "description": "Exquisite 3 BHK modern luxury apartment situated in the heart of Nanakheda, adjacent to Shyama Prasad Mukherjee Complex. Features marble flooring, wide balconies, 24/7 security, covered car parking, and modern elevator access.",
+    "amenities": ["Covered Parking", "24/7 Security", "Power Backup", "Clubhouse", "High Speed Elevator", "Intercom"],
+    "status": "active",
+    "isFeatured": true,
+    "views": 432,
+    "createdAt": "2026-09-01T10:00:00.000Z",
+    "updatedAt": "2026-09-18T14:30:00.000Z"
+  },
+  {
+    "id": "prop-ujj-002",
+    "title": "Prime Commercial Retail Shop",
+    "slug": "prime-commercial-retail-shop-nanakheda",
+    "category": "commercial",
+    "type": "Shop",
+    "price": 7500000,
+    "priceDisplay": "₹75.00 L",
+    "pricePerSqft": "₹12,000/sq.ft",
+    "areaSqft": 625,
+    "bedrooms": 0,
+    "bathrooms": 1,
+    "locality": "Shyama Prasad Mukherjee Complex, Ujjain",
+    "address": "Shop 14, Shyama Prasad Mukherjee Complex, Nanakheda, Ujjain, MP - 456001",
+    "coordinates": {
+      "lat": 23.1972,
+      "lng": 75.7912
+    },
+    "images": [
+      "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=80"
+    ],
+    "description": "High-footfall ground floor commercial retail shop in the prestigious Shyama Prasad Mukherjee Complex. Perfect for electronics, financial services, clinics, or flagship retail outlets with exceptional road frontage.",
+    "amenities": ["Main Road Facing", "Visitor Parking", "Fire Safety", "24/7 Water Supply", "High Footfall Zone"],
+    "status": "active",
+    "isFeatured": true,
+    "views": 589,
+    "createdAt": "2026-09-03T11:00:00.000Z",
+    "updatedAt": "2026-09-19T09:15:00.000Z"
+  },
+  {
+    "id": "prop-ujj-003",
+    "title": "Royal Heritage 4 BHK Luxury Villa",
+    "slug": "royal-heritage-4-bhk-luxury-villa-jawahar-nagar",
+    "category": "luxury",
+    "type": "Villa",
+    "price": 32500000,
+    "priceDisplay": "₹3.25 Cr",
+    "pricePerSqft": "₹8,552/sq.ft",
+    "areaSqft": 3800,
+    "bedrooms": 4,
+    "bathrooms": 5,
+    "locality": "Jawahar Nagar, Ujjain",
+    "address": "Near Malipura Main Road, Jawahar Nagar, Ujjain, MP - 456001",
+    "coordinates": {
+      "lat": 23.1856,
+      "lng": 75.7821
+    },
+    "images": [
+      "https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80"
+    ],
+    "description": "Architect-designed standalone independent luxury villa featuring private landscaped garden, home theatre room, Italian marble finishes, solar rooftop, and expansive terrace overlooking green vistas.",
+    "amenities": ["Private Garden", "Servant Room", "Solar Power", "Gated Security", "Multi-Car Garage", "Modular Kitchen"],
+    "status": "active",
+    "isFeatured": true,
+    "views": 812,
+    "createdAt": "2026-08-25T08:00:00.000Z",
+    "updatedAt": "2026-09-17T16:20:00.000Z"
+  },
+  {
+    "id": "prop-ujj-004",
+    "title": "Prime Residential Colony Plot",
+    "slug": "prime-residential-colony-plot-nanakheda",
+    "category": "plots",
+    "type": "Plot",
+    "price": 4500000,
+    "priceDisplay": "₹45.00 L",
+    "pricePerSqft": "₹3,000/sq.ft",
+    "areaSqft": 1500,
+    "bedrooms": 0,
+    "bathrooms": 0,
+    "locality": "Nanakheda Extension, Ujjain",
+    "address": "Sector B, Near Sanwer Road Link, Nanakheda, Ujjain, MP",
+    "coordinates": {
+      "lat": 23.1612,
+      "lng": 75.7984
+    },
+    "images": [
+      "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80"
+    ],
+    "description": "Clear-title, RERA & T&CP approved East-facing residential plot in a well-developed gated colony with 40-ft wide concrete roads, underground drainage, street lights, and boundary demarcation.",
+    "amenities": ["Clear Title", "RERA Approved", "Wide Concrete Road", "Underground Drainage", "Electricity Connection"],
+    "status": "active",
+    "isFeatured": true,
+    "views": 395,
+    "createdAt": "2026-09-08T12:00:00.000Z",
+    "updatedAt": "2026-09-18T11:00:00.000Z"
+  },
+  {
+    "id": "prop-ujj-005",
+    "title": "Highway-Facing Commercial Land",
+    "slug": "highway-facing-commercial-land-indore-ujjain-road",
+    "category": "plots",
+    "type": "Land",
+    "price": 85000000,
+    "priceDisplay": "₹8.50 Cr",
+    "pricePerSqft": "₹1,950/sq.ft",
+    "areaSqft": 43560,
+    "bedrooms": 0,
+    "bathrooms": 0,
+    "locality": "Indore-Ujjain Highway, Ujjain",
+    "address": "4-Lane Indore-Ujjain Expressway Touch, Ujjain Growth Corridor, MP",
+    "coordinates": {
+      "lat": 23.1425,
+      "lng": 75.8152
+    },
+    "images": [
+      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80"
+    ],
+    "description": "1 Acre (43,560 sq.ft) prime commercial land parcel having 180 feet wide frontage directly on the 4-lane Indore-Ujjain Highway. Ideal for hotel, resort, convention centre, institutional campus, or petrol pump.",
+    "amenities": ["Highway Frontage", "NA Diverted", "High Appreciation", "Industrial & Commercial Permitted"],
+    "status": "active",
+    "isFeatured": true,
+    "views": 670,
+    "createdAt": "2026-08-20T14:00:00.000Z",
+    "updatedAt": "2026-09-15T18:00:00.000Z"
+  },
+  {
+    "id": "prop-ujj-006",
+    "title": "Freeganj Commercial Office Space",
+    "slug": "freeganj-commercial-office-space",
+    "category": "commercial",
+    "type": "Office",
+    "price": 11500000,
+    "priceDisplay": "₹1.15 Cr",
+    "pricePerSqft": "₹10,455/sq.ft",
+    "areaSqft": 1100,
+    "bedrooms": 0,
+    "bathrooms": 2,
+    "locality": "Freeganj, Ujjain",
+    "address": "Madhav Club Road, Freeganj, Ujjain, MP - 456010",
+    "coordinates": {
+      "lat": 23.1812,
+      "lng": 75.7895
+    },
+    "images": [
+      "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=800&q=80"
+    ],
+    "description": "Fully furnished contemporary corporate office floor in central Freeganj. Comprises reception lobby, executive conference room, 18 modular workstations, 2 director cabins, and pantry.",
+    "amenities": ["Furnished Interior", "AC Centralized", "Conference Room", "Pantry", "Reserved Parking", "High Speed Internet"],
+    "status": "active",
+    "isFeatured": false,
+    "views": 320,
+    "createdAt": "2026-09-05T09:30:00.000Z",
+    "updatedAt": "2026-09-16T12:45:00.000Z"
+  }
+]

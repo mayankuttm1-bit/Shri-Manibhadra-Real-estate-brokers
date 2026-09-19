@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Listings - Shri Manibhadra Real Estate Brokers</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/trs-style.css">
+    
+    <style>
+        /* Specific styles for properties page */
+        .properties-hero {
+            background-color: var(--navy);
+            color: var(--paper);
+            padding: 4rem 5%;
+            text-align: center;
+            position: relative;
+            background-image: linear-gradient(rgba(11, 25, 44, 0.8), rgba(11, 25, 44, 0.9)), url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23c9a24b" fill-opacity="0.1"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+        }
+
+        .properties-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--brass-gold);
+        }
+
+        .breadcrumb {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 0.9rem;
+            color: var(--limestone);
+            margin-bottom: 1rem;
+        }
+
+        .breadcrumb a {
+            color: var(--brass-gold);
+            text-decoration: none;
+        }
+
+        .properties-hero p {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+            color: var(--limestone);
+        }
+
+        .search-filter-bar {
+            position: sticky;
+            top: 72px; /* Adjust based on header height */
+            background: var(--paper);
+            padding: 1.25rem 5%;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            z-index: 99;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid rgba(138, 129, 112, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .search-filter-bar {
+                position: static !important;
+                box-shadow: none;
+                padding: 1rem 4%;
+            }
+        }
+
+        .filter-group {
+            display: flex;
+            align-items: center;
+            background: #fff;
+            border: 1px solid var(--taupe);
+            border-radius: 4px;
+            padding: 0.5rem;
+            flex: 1;
+            min-width: 150px;
+        }
+
+        .filter-group input, .filter-group select {
+            border: none;
+            outline: none;
+            background: transparent;
+            width: 100%;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 0.9rem;
+            color: var(--ink);
+            padding-left: 0.5rem;
+        }
+
+        .filter-group svg {
+            color: var(--taupe);
+            width: 18px;
+            height: 18px;
+        }
+
+        .btn-search {
+            background-color: var(--navy);
+            color: var(--paper);
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 600;
+            transition: background 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .btn-search:hover {
+            background-color: var(--brass-gold);
+            color: var(--navy);
+        }
+
+        .btn-clear {
+            background: transparent;
+            border: none;
+            color: var(--taupe);
+            cursor: pointer;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            text-decoration: underline;
+            white-space: nowrap;
+        }
+
+        .btn-clear:hover {
+            color: var(--navy);
+        }
+
+        .results-header {
+            padding: 2rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--limestone);
+        }
+
+        .results-count {
+            font-weight: 600;
+            color: var(--ink);
+        }
+
+        .view-toggle {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .view-toggle button {
+            background: transparent;
+            border: 1px solid var(--taupe);
+            padding: 0.4rem;
+            border-radius: 4px;
+            cursor: pointer;
+            color: var(--navy);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .view-toggle button.active {
+            background: var(--navy);
+            color: var(--paper);
+            border-color: var(--navy);
+        }
+
+        .properties-grid-container {
+            padding: 0 5% 4rem;
+            background-color: var(--limestone);
+        }
+
+        #properties-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 4rem 1rem;
+            grid-column: 1 / -1;
+            color: var(--taupe);
+        }
+
+        .empty-state svg {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 1rem;
+            color: var(--brass-gold);
+        }
+
+        .map-section {
+            padding: 4rem 5%;
+            background-color: var(--paper);
+        }
+
+        .map-section h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--navy);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        #properties-page-map {
+            height: 450px;
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            z-index: 1;
+        }
+
+        .cta-section {
+            background-color: var(--navy);
+            color: var(--paper);
+            text-align: center;
+            padding: 4rem 5%;
+        }
+        
+        .cta-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--brass-gold);
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-whatsapp-cta {
+            background-color: var(--whatsapp);
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+            transition: opacity 0.3s;
+        }
+
+        .btn-whatsapp-cta:hover {
+            opacity: 0.9;
+        }
+
+        .btn-call-cta {
+            background-color: transparent;
+            color: var(--brass-gold);
+            border: 2px solid var(--brass-gold);
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-call-cta:hover {
+            background-color: var(--brass-gold);
+            color: var(--navy);
+        }
+        
+        /* Grid Item Styles (Reused from homepage concept) */
+        .property-card {
+            background: var(--paper);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(138, 129, 112, 0.1);
+        }
+
+        .property-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .property-img-wrapper {
+            position: relative;
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .property-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .property-card:hover .property-img-wrapper img {
+            transform: scale(1.05);
+        }
+
+        .property-badges {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .badge {
+            background: var(--navy);
+            color: var(--paper);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .badge.featured {
+            background: var(--brass-gold);
+            color: var(--navy);
+        }
+
+        .property-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .property-locality {
+            color: var(--taupe);
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .property-locality svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        .property-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            color: var(--navy);
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .property-specs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(138, 129, 112, 0.2);
+            flex-wrap: wrap;
+        }
+
+        .spec-item {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.9rem;
+            color: var(--ink);
+        }
+
+        .spec-item svg {
+            color: var(--taupe);
+            width: 16px;
+            height: 16px;
+        }
+
+        .property-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-top: auto;
+        }
+
+        .property-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--navy);
+        }
+
+        .property-price span {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 400;
+            color: var(--taupe);
+        }
+
+        .property-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .btn-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--taupe);
+            color: var(--navy);
+            background: transparent;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+        }
+
+        .btn-icon:hover {
+            background: var(--navy);
+            color: var(--paper);
+            border-color: var(--navy);
+        }
+
+        .btn-icon.whatsapp {
+            border-color: var(--whatsapp);
+            color: var(--whatsapp);
+        }
+
+        .btn-icon.whatsapp:hover {
+            background: var(--whatsapp);
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- === MAIN HEADER/NAV (Unified) === -->
+    <header class="site-header">
+        <div class="header-inner">
+            <!-- Logo Area -->
+            <a href="/" class="logo flex items-center gap-3 text-decoration-none">
+                <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #C9A24B 0%, #D4AF37 100%); color: #0B192C; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-weight: bold; font-size: 1.25rem; border-radius: 6px; box-shadow: 0 2px 8px rgba(201,162,75,0.3);">SM</div>
+                <div style="line-height: 1.15; display: flex; flex-direction: column;">
+                    <span style="font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 700; color: #FBFAF6; letter-spacing: 0.5px;">Shri Manibhadra</span>
+                    <span style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.72rem; color: #C9A24B; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 600;">Real Estate Brokers</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="main-nav">
+                <a href="/" class="nav-link">Home</a>
+                <a href="/properties" class="nav-link active">Properties</a>
+                <a href="/services" class="nav-link">Services</a>
+                <a href="/about" class="nav-link">About Us</a>
+                <a href="/contact" class="nav-link">Contact</a>
+            </nav>
+
+            <!-- Right Actions -->
+            <div class="nav-actions">
+                <a href="/login" class="btn-signin">Sign In</a>
+                <a href="/contact" class="btn-post">Post Property Free</a>
+            </div>
+
+            <!-- Mobile Menu Toggle Button (Hamburger / 3 lines) -->
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open navigation menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="4" y1="6" x2="20" y2="6"></line>
+                    <line x1="4" y1="12" x2="20" y2="12"></line>
+                    <line x1="4" y1="18" x2="20" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer & Backdrop -->
+    <div class="drawer-backdrop" id="drawer-backdrop"></div>
+    <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+        <div class="drawer-header">
+            <a href="/" class="logo flex items-center gap-3 text-decoration-none">
+                <div style="width: 36px; height: 36px; background: linear-gradient(135deg, #C9A24B 0%, #D4AF37 100%); color: #0B192C; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-weight: bold; font-size: 1.1rem; border-radius: 6px;">SM</div>
+                <div style="line-height: 1.15; display: flex; flex-direction: column;">
+                    <span style="font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; color: #FBFAF6;">Shri Manibhadra</span>
+                    <span style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.68rem; color: #C9A24B; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 600;">Real Estate Brokers</span>
+                </div>
+            </a>
+            <button class="drawer-close" id="drawer-close" aria-label="Close navigation menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+
+        <nav class="drawer-nav">
+            <a href="/" class="drawer-link">Home</a>
+            <a href="/properties" class="drawer-link active">Properties</a>
+            <a href="/services" class="drawer-link">Services</a>
+            <a href="/about" class="drawer-link">About Us</a>
+            <a href="/contact" class="drawer-link">Contact</a>
+        </nav>
+
+        <div class="drawer-footer" style="margin-top: auto; display: flex; flex-direction: column; gap: 14px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.1);">
+            <div style="display: flex; gap: 10px;">
+                <a href="tel:+919876543210" style="flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: rgba(255,255,255,0.08); border: 1px solid rgba(201,162,75,0.4); border-radius: 8px; color: #C9A24B; text-decoration: none; font-weight: 600; font-size: 0.9rem;">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    Call Now
+                </a>
+                <a href="https://wa.me/919876543210" target="_blank" style="flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #25D366; border-radius: 8px; color: #ffffff; text-decoration: none; font-weight: 600; font-size: 0.9rem;">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                    WhatsApp
+                </a>
+            </div>
+            <div style="display: flex; gap: 10px;">
+                <a href="/login" style="flex: 1; text-align: center; padding: 10px; border: 1px solid rgba(255,255,255,0.3); border-radius: 8px; color: #FBFAF6; text-decoration: none; font-size: 0.9rem;">Sign In</a>
+                <a href="/contact" style="flex: 1.2; text-align: center; padding: 10px; background: #C9A24B; border-radius: 8px; color: #0B192C; text-decoration: none; font-weight: 700; font-size: 0.9rem;">Post Property</a>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Search & Filter Bar -->
+    <div class="search-filter-bar">
+        <div class="filter-group" style="flex: 2; min-width: 250px;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <input type="text" id="search-input" placeholder="Search by location, builder, or keywords...">
+        </div>
+        
+        <div class="filter-group">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+            <select id="category-filter">
+                <option value="">All Categories</option>
+                <option value="residential">Residential</option>
+                <option value="commercial">Commercial</option>
+                <option value="plots">Plots & Land</option>
+                <option value="luxury">Luxury</option>
+            </select>
+        </div>
+
+        <div class="filter-group">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+            <select id="type-filter">
+                <option value="">All Types</option>
+                <option value="flat">Flat/Apartment</option>
+                <option value="villa">Villa</option>
+                <option value="duplex">Duplex</option>
+                <option value="shop">Shop</option>
+                <option value="office">Office Space</option>
+                <option value="showroom">Showroom</option>
+                <option value="plot">Plot</option>
+                <option value="land">Agricultural Land</option>
+                <option value="farmhouse">Farmhouse</option>
+            </select>
+        </div>
+
+        <div class="filter-group">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+            <select id="budget-filter">
+                <option value="">Any Budget</option>
+                <option value="0-2500000">Under ₹25L</option>
+                <option value="2500000-5000000">₹25L - ₹50L</option>
+                <option value="5000000-10000000">₹50L - ₹1Cr</option>
+                <option value="10000000-30000000">₹1Cr - ₹3Cr</option>
+                <option value="30000000-50000000">₹3Cr - ₹5Cr</option>
+                <option value="50000000-999999999">Above ₹5Cr</option>
+            </select>
+        </div>
+
+        <div class="filter-group">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="21" y1="10" x2="3" y2="10"></line><line x1="21" y1="6" x2="3" y2="6"></line><line x1="21" y1="14" x2="3" y2="14"></line><line x1="21" y1="18" x2="3" y2="18"></line></svg>
+            <select id="sort-filter">
+                <option value="newest">Newest First</option>
+                <option value="price-asc">Price Low-High</option>
+                <option value="price-desc">Price High-Low</option>
+                <option value="popular">Most Popular</option>
+            </select>
+        </div>
+
+        <button class="btn-search" onclick="applyFilters()">Search</button>
+        <button class="btn-clear" onclick="clearFilters()">Clear Filters</button>
+    </div>
+
+    <!-- Results Header -->
+    <div class="results-header">
+        <div class="results-count">Showing <span id="property-count">...</span> properties</div>
+        <div class="view-toggle">
+            <button class="active" id="grid-view-btn" aria-label="Grid View">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+            </button>
+            <button id="list-view-btn" aria-label="List View">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Properties Grid -->
+    <section class="properties-grid-container">
+        <div id="properties-list">
+            <!-- Loading state initially -->
+            <div style="grid-column: 1/-1; text-align: center; padding: 3rem; color: var(--taupe);">
+                Loading properties...
+            </div>
+            
+            <!-- Sample Empty State (will be toggled via JS) 
+            <div class="empty-state" style="display: none;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                <h3>No properties found</h3>
+                <p>Try adjusting your search criteria or clear filters to see more results.</p>
+            </div>
+            -->
+        </div>
+    </section>
+
+    <!-- All-Properties Map -->
+    <section class="map-section">
+        <h3>View Properties on Map</h3>
+        <div id="properties-page-map"></div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>Can't find what you're looking for?</h2>
+        <p>Talk to our advisors and let us find the perfect property for you in Ujjain.</p>
+        <div class="cta-buttons">
+            <a href="https://wa.me/91XXXXXXXXXX?text=Hi,%20I%20am%20looking%20for%20a%20property%20in%20Ujjain" class="btn-whatsapp-cta">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                WhatsApp Us
+            </a>
+            <a href="tel:+91XXXXXXXXXX" class="btn-call-cta">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                Call Now
+            </a>
+        </div>
+    </section>
+
+    <!-- === FOOTER (Unified) === -->
+    <footer class="site-footer bg-navy border-t border-white/10 pt-16 pb-8 text-white">
+        <div class="site-footer-inner max-w-7xl mx-auto px-4">
+            <div class="site-footer-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <!-- Col 1 -->
+                <div>
+                    <a href="/" class="flex flex-col text-white mb-6 text-decoration-none">
+                        <span class="font-display text-2xl font-bold tracking-wide" style="font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: #ffffff;">Shri Manibhadra</span>
+                        <span class="text-[10px] uppercase tracking-widest font-medium mt-1" style="font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: #C9A24B; font-weight: 600;">Real Estate Brokers</span>
+                    </a>
+                    <p class="text-white/70 text-sm leading-relaxed mb-6" style="color: rgba(255,255,255,0.7); font-size: 0.875rem; line-height: 1.6; margin-bottom: 24px;">Your most trusted real estate partner in Ujjain. We specialize in residential, commercial, and land properties providing expert advisory and representation.</p>
+                    <div class="inline-flex items-center gap-2 bg-white/5 border border-white/10 px-3 py-1.5 rounded text-sm text-brass font-medium" style="display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 6px 12px; border-radius: 6px; font-size: 0.875rem; color: #C9A24B; font-weight: 500;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none" style="color: #C9A24B;"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        4.9★ Google Rating
+                    </div>
+                </div>
+
+                <!-- Col 2 -->
+                <div>
+                    <h4 class="font-display text-lg font-bold mb-6 text-white" style="font-family: 'Playfair Display', serif; font-size: 1.125rem; font-weight: 700; margin-bottom: 24px; color: #ffffff;">Quick Links</h4>
+                    <ul class="space-y-3 text-sm text-white/70" style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px;">
+                        <li><a href="/" class="hover:text-brass transition-colors" style="color: rgba(255,255,255,0.7); text-decoration: none;">Home</a></li>
+                        <li><a href="/properties" class="hover:text-brass transition-colors" style="color: rgba(255,255,255,0.7); text-decoration: none;">Properties</a></li>
+                        <li><a href="/services" class="hover:text-brass transition-colors" style="color: rgba(255,255,255,0.7); text-decoration: none;">Services</a></li>
+                        <li><a href="/about" class="hover:text-brass transition-colors" style="color: rgba(255,255,255,0.7); text-decoration: none;">About Us</a></li>
+                        <li><a href="/contact" class="hover:text-brass transition-colors" style="color: rgba(255,255,255,0.7); text-decoration: none;">Contact</a></li>
+                        <li style="padding-top: 8px;"><a href="/login" class="text-brass hover:text-white transition-colors flex items-center gap-1" style="color: #C9A24B; text-decoration: none; display: flex; align-items: center; gap: 6px;"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path><polyline points="10 17 15 12 10 7"></polyline><line x1="15" y1="12" x2="3" y2="12"></line></svg> Admin Login</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3 -->
+                <div>
+                    <h4 class="font-display text-lg font-bold mb-6 text-white" style="font-family: 'Playfair Display', serif; font-size: 1.125rem; font-weight: 700; margin-bottom: 24px; color: #ffffff;">Top Services</h4>
+                    <ul class="space-y-3 text-sm text-white/70" style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px;">
+                        <li><a href="/services" class="hover:text-brass transition-colors" style="color: rgba(255,255,255,0.7); text-decoration: none;">Property Consultant</a></li>
+                        <li><a href="/services" class="hover:text-brass transition-colors" style="color: rgba(255,255,255,0.7); text-decoration: none;">Home Buying</a></li>
+                        <li><a href="/services" class="hover:text-brass transition-colors" style="color: rgba(255,255,255,0.7); text-decoration: none;">Commercial Property</a></li>
+                        <li><a href="/services" class="hover:text-brass transition-colors" style="color: rgba(255,255,255,0.7); text-decoration: none;">Land Sales</a></li>
+                        <li><a href="/services" class="hover:text-brass transition-colors" style="color: rgba(255,255,255,0.7); text-decoration: none;">Luxury Properties</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4 -->
+                <div>
+                    <h4 class="font-display text-lg font-bold mb-6 text-white" style="font-family: 'Playfair Display', serif; font-size: 1.125rem; font-weight: 700; margin-bottom: 24px; color: #ffffff;">Contact Info</h4>
+                    <ul class="space-y-4 text-sm text-white/70" style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 16px;">
+                        <li class="flex items-start gap-3" style="display: flex; align-items: flex-start; gap: 12px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brass mt-0.5 shrink-0" style="color: #C9A24B; flex-shrink: 0; margin-top: 2px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            <span style="line-height: 1.4;">Shop 14, Shyama Prasad Mukherjee Complex, Nanakheda, Jawahar Nagar, Malipura, Ujjain - 456001, MP</span>
+                        </li>
+                        <li class="flex items-center gap-3" style="display: flex; align-items: center; gap: 12px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brass shrink-0" style="color: #C9A24B; flex-shrink: 0;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                            <a href="tel:+919876543210" class="hover:text-white transition-colors" style="color: rgba(255,255,255,0.7); text-decoration: none;">+91 98765 43210</a>
+                        </li>
+                        <li class="flex items-center gap-3" style="display: flex; align-items: center; gap: 12px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brass shrink-0" style="color: #C9A24B; flex-shrink: 0;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                            <a href="mailto:info@manibhadrarealestate.com" class="hover:text-white transition-colors" style="color: rgba(255,255,255,0.7); text-decoration: none;">info@manibhadrarealestate.com</a>
+                        </li>
+                        <li class="flex items-center gap-3" style="display: flex; align-items: center; gap: 12px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brass shrink-0" style="color: #C9A24B; flex-shrink: 0;"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                            <span>Mon-Sun: 10:00 AM - 8:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="site-footer-bottom border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/50" style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 32px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; font-size: 0.75rem; color: rgba(255,255,255,0.5);">
+                <p style="margin: 0;">&copy; 2026 Shri Manibhadra Real Estate Brokers. All rights reserved.</p>
+                <div class="flex gap-4" style="display: flex; gap: 16px;">
+                    <a href="#" class="hover:text-white transition-colors" style="color: rgba(255,255,255,0.5); text-decoration: none;">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors" style="color: rgba(255,255,255,0.5); text-decoration: none;">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Action Buttons -->
+    <!-- Floating Call Button (above WhatsApp) -->
+    <a href="tel:+919876543210" style="position: fixed; bottom: 100px; right: 30px; background: linear-gradient(135deg, #102642 0%, #0B192C 100%); border: 2px solid var(--brass-gold); color: var(--brass-gold); width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; box-shadow: 0 4px 15px rgba(11, 25, 44, 0.4); z-index: 1000; text-decoration: none; animation: callPulse 2.5s infinite;" aria-label="Call Now">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+    </a>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/919876543210" style="position: fixed; bottom: 30px; right: 30px; background-color: var(--whatsapp); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4); z-index: 1000; text-decoration: none; animation: pulse 2s infinite;" aria-label="Chat on WhatsApp">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+    </a>
+
+    <style>
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+        @keyframes callPulse {
+            0% { box-shadow: 0 0 0 0 rgba(201, 162, 75, 0.6); }
+            70% { box-shadow: 0 0 0 15px rgba(201, 162, 75, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(201, 162, 75, 0); }
+        }
+    </style>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="js/header.js"></script>
+    <script src="js/properties-page.js"></script>
+
+</body>
+</html>

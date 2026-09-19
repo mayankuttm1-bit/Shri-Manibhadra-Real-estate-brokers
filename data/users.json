@@ -1,0 +1,10 @@
+[
+  {
+    "id": "usr-admin-01",
+    "name": "Shri Manibhadra Admin",
+    "email": "admin@manibhadrarealestate.com",
+    "passwordHash": "$2a$10$4GQBKWOHN8lcPRrQuwroxOXNgSnJzuatzuqtTcyecx29tfrkhbTxO",
+    "role": "admin",
+    "createdAt": "2026-09-19T00:00:00.000Z"
+  }
+]

@@ -1,0 +1,27 @@
+{
+  "totalViews": 3228,
+  "totalInquiries": 48,
+  "dailyViews": [
+    { "date": "2026-09-13", "views": 380 },
+    { "date": "2026-09-14", "views": 415 },
+    { "date": "2026-09-15", "views": 460 },
+    { "date": "2026-09-16", "views": 510 },
+    { "date": "2026-09-17", "views": 495 },
+    { "date": "2026-09-18", "views": 540 },
+    { "date": "2026-09-19", "views": 428 }
+  ],
+  "categoryViews": {
+    "residential": 1420,
+    "commercial": 680,
+    "plots": 790,
+    "luxury": 338
+  },
+  "localityInterest": {
+    "Nanakheda": 1250,
+    "Jawahar Nagar": 680,
+    "Freeganj": 520,
+    "Indore-Ujjain Highway": 490,
+    "Dewas Road": 288
+  },
+  "lastUpdated": "2026-09-19T12:00:00.000Z"
+}

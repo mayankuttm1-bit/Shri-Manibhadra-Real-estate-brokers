@@ -1,0 +1,1413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprehensive Real Estate Services - Shri Manibhadra Real Estate Brokers Ujjain</title>
+    <meta name="description" content="Explore 19+ premium real estate services in Ujjain: Residential luxury sales, commercial leasing, plots, agricultural land, valuation, and 100% legal title verification.">
+    <meta name="keywords" content="Real Estate Services Ujjain, Property Consultant Ujjain, Commercial Property Ujjain, Plot Sale Ujjain, Land Advisory, Stamp Duty Calculator MP">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom Base CSS -->
+    <link rel="stylesheet" href="css/trs-style.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              navy: { DEFAULT: '#0B192C', light: '#102642', dark: '#060E18' },
+              brass: { DEFAULT: '#C9A24B', dark: '#B38E38', light: '#E5C478' },
+              limestone: '#F7F6F2',
+              ink: '#121826',
+              taupe: '#8A8170',
+              paper: '#FBFAF6',
+              whatsapp: '#25D366'
+            },
+            fontFamily: {
+              display: ['"Playfair Display"', 'serif'],
+              body: ['"Plus Jakarta Sans"', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
+
+    <style>
+        :root {
+            --navy: #0B192C;
+            --navy-light: #102642;
+            --brass: #C9A24B;
+            --brass-gold: #C9A24B;
+            --limestone: #F7F6F2;
+            --ink: #121826;
+            --taupe: #8A8170;
+            --paper: #FBFAF6;
+            --whatsapp: #25D366;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--paper);
+            color: var(--ink);
+        }
+
+        h1, h2, h3, h4, .font-display {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Skiper UI Filter Pills */
+        .filter-pill {
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .filter-pill.active {
+            background-color: var(--navy);
+            color: #FBFAF6;
+            border-color: var(--brass);
+            box-shadow: 0 4px 14px rgba(11, 25, 44, 0.2);
+            transform: translateY(-1px);
+        }
+
+        /* Vengeance UI Service Card */
+        .service-card-ui {
+            background: #ffffff;
+            border: 1px solid rgba(138, 129, 112, 0.18);
+            border-radius: 14px;
+            transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        .service-card-ui::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #C9A24B, #D4AF37, #C9A24B);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .service-card-ui:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 36px rgba(11, 25, 44, 0.09);
+            border-color: rgba(201, 162, 75, 0.45);
+        }
+        .service-card-ui:hover::before {
+            opacity: 1;
+        }
+
+        /* Animaster Micro-interactions */
+        .badge-pulse {
+            animation: badgePulse 2s infinite;
+        }
+        @keyframes badgePulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes callPulse {
+            0% { box-shadow: 0 0 0 0 rgba(201, 162, 75, 0.6); }
+            70% { box-shadow: 0 0 0 15px rgba(201, 162, 75, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(201, 162, 75, 0); }
+        }
+        @keyframes waPulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        /* Stepper UI */
+        .step-bubble {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+
+        /* Modal Transitions */
+        .modal-backdrop {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        .modal-backdrop.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .modal-container {
+            transform: scale(0.92) translateY(20px);
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .modal-backdrop.active .modal-container {
+            transform: scale(1) translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-paper text-ink antialiased">
+
+    <!-- === MAIN HEADER/NAV (Unified) === -->
+    <header class="site-header">
+        <div class="header-inner">
+            <!-- Logo Area -->
+            <a href="/" class="logo flex items-center gap-3 text-decoration-none">
+                <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #C9A24B 0%, #D4AF37 100%); color: #0B192C; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-weight: bold; font-size: 1.25rem; border-radius: 6px; box-shadow: 0 2px 8px rgba(201,162,75,0.3);">SM</div>
+                <div style="line-height: 1.15; display: flex; flex-direction: column;">
+                    <span style="font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 700; color: #FBFAF6; letter-spacing: 0.5px;">Shri Manibhadra</span>
+                    <span style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.72rem; color: #C9A24B; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 600;">Real Estate Brokers</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="main-nav">
+                <a href="/" class="nav-link">Home</a>
+                <a href="/properties" class="nav-link">Properties</a>
+                <a href="/services" class="nav-link active">Services</a>
+                <a href="/about" class="nav-link">About Us</a>
+                <a href="/contact" class="nav-link">Contact</a>
+            </nav>
+
+            <!-- Right Actions -->
+            <div class="nav-actions">
+                <a href="/login" class="btn-signin">Sign In</a>
+                <a href="/contact" class="btn-post">Post Property Free</a>
+            </div>
+
+            <!-- Mobile Menu Toggle Button (Hamburger) -->
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open navigation menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="4" y1="6" x2="20" y2="6"></line>
+                    <line x1="4" y1="12" x2="20" y2="12"></line>
+                    <line x1="4" y1="18" x2="20" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer & Backdrop -->
+    <div class="drawer-backdrop" id="drawer-backdrop"></div>
+    <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+        <div class="drawer-header">
+            <a href="/" class="logo flex items-center gap-3 text-decoration-none">
+                <div style="width: 36px; height: 36px; background: linear-gradient(135deg, #C9A24B 0%, #D4AF37 100%); color: #0B192C; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-weight: bold; font-size: 1.1rem; border-radius: 6px;">SM</div>
+                <div style="line-height: 1.15; display: flex; flex-direction: column;">
+                    <span style="font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; color: #FBFAF6;">Shri Manibhadra</span>
+                    <span style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.68rem; color: #C9A24B; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 600;">Real Estate Brokers</span>
+                </div>
+            </a>
+            <button class="drawer-close" id="drawer-close" aria-label="Close navigation menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+
+        <nav class="drawer-nav">
+            <a href="/" class="drawer-link">Home</a>
+            <a href="/properties" class="drawer-link">Properties</a>
+            <a href="/services" class="drawer-link active">Services</a>
+            <a href="/about" class="drawer-link">About Us</a>
+            <a href="/contact" class="drawer-link">Contact</a>
+        </nav>
+
+        <div class="drawer-footer" style="margin-top: auto; display: flex; flex-direction: column; gap: 14px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.1);">
+            <div style="display: flex; gap: 10px;">
+                <a href="tel:+919876543210" style="flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: rgba(255,255,255,0.08); border: 1px solid rgba(201,162,75,0.4); border-radius: 8px; color: #C9A24B; text-decoration: none; font-weight: 600; font-size: 0.9rem;">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    Call Now
+                </a>
+                <a href="https://wa.me/919876543210" target="_blank" style="flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #25D366; border-radius: 8px; color: #ffffff; text-decoration: none; font-weight: 600; font-size: 0.9rem;">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                    WhatsApp
+                </a>
+            </div>
+            <div style="display: flex; gap: 10px;">
+                <a href="/login" style="flex: 1; text-align: center; padding: 10px; border: 1px solid rgba(255,255,255,0.3); border-radius: 8px; color: #FBFAF6; text-decoration: none; font-size: 0.9rem;">Sign In</a>
+                <a href="/contact" style="flex: 1.2; text-align: center; padding: 10px; background: #C9A24B; border-radius: 8px; color: #0B192C; text-decoration: none; font-weight: 700; font-size: 0.9rem;">Post Property</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- === SECTION 1: ELEGANT PAGE INTRO (No dark hero banner) === -->
+    <section class="pt-12 pb-8 px-4 max-w-7xl mx-auto text-center">
+        <div class="inline-flex items-center gap-2 bg-brass/10 border border-brass/30 text-navy px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-4 badge-pulse">
+            <span>💎</span>
+            <span>19+ Tailored Real Estate Solutions in Ujjain</span>
+        </div>
+        <h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-navy mb-4 tracking-tight">
+            Our Professional <span class="text-brass italic">Services</span>
+        </h1>
+        <p class="text-taupe text-base md:text-lg max-w-3xl mx-auto leading-relaxed">
+            From premier residential acquisitions and prime commercial corridors to 100% legal title verification, agricultural land transactions, and NRI portfolio management in Ujjain.
+        </p>
+
+        <!-- Trust Metric Badges -->
+        <div class="flex flex-wrap items-center justify-center gap-6 md:gap-12 mt-8 pt-6 border-t border-taupe/15 max-w-4xl mx-auto">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-navy/5 flex items-center justify-center text-brass font-bold text-lg">19+</div>
+                <div class="text-left leading-tight">
+                    <span class="block font-bold text-navy text-sm">Services</span>
+                    <span class="text-xs text-taupe">Full-Spectrum</span>
+                </div>
+            </div>
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-navy/5 flex items-center justify-center text-brass font-bold text-lg">43+</div>
+                <div class="text-left leading-tight">
+                    <span class="block font-bold text-navy text-sm">Happy Clients</span>
+                    <span class="text-xs text-taupe">Across Ujjain</span>
+                </div>
+            </div>
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-navy/5 flex items-center justify-center text-brass font-bold text-lg">4.9★</div>
+                <div class="text-left leading-tight">
+                    <span class="block font-bold text-navy text-sm">Client Rating</span>
+                    <span class="text-xs text-taupe">Verified Trust</span>
+                </div>
+            </div>
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-navy/5 flex items-center justify-center text-brass font-bold text-lg">100%</div>
+                <div class="text-left leading-tight">
+                    <span class="block font-bold text-navy text-sm">Legal Checked</span>
+                    <span class="text-xs text-taupe">Title Guaranteed</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- === SECTION 2: SKIPER UI FILTER TABS & LIVE SEARCH === -->
+    <section class="sticky top-[72px] z-40 bg-paper/95 backdrop-blur-md border-y border-taupe/20 py-4 px-4 shadow-sm">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+            
+            <!-- Category Filter Pills -->
+            <div class="flex items-center gap-2 overflow-x-auto w-full md:w-auto pb-1 md:pb-0 scrollbar-none" id="category-pills">
+                <button class="filter-pill active whitespace-nowrap px-4 py-2 rounded-full text-xs md:text-sm font-semibold border border-taupe/30 bg-navy text-white" data-category="all">
+                    🌟 All Services (19)
+                </button>
+                <button class="filter-pill whitespace-nowrap px-4 py-2 rounded-full text-xs md:text-sm font-semibold border border-taupe/30 bg-white text-ink hover:bg-limestone" data-category="residential">
+                    🏡 Residential (5)
+                </button>
+                <button class="filter-pill whitespace-nowrap px-4 py-2 rounded-full text-xs md:text-sm font-semibold border border-taupe/30 bg-white text-ink hover:bg-limestone" data-category="commercial">
+                    🏢 Commercial (4)
+                </button>
+                <button class="filter-pill whitespace-nowrap px-4 py-2 rounded-full text-xs md:text-sm font-semibold border border-taupe/30 bg-white text-ink hover:bg-limestone" data-category="plots">
+                    🌾 Plots & Land (2)
+                </button>
+                <button class="filter-pill whitespace-nowrap px-4 py-2 rounded-full text-xs md:text-sm font-semibold border border-taupe/30 bg-white text-ink hover:bg-limestone" data-category="advisory">
+                    📊 Advisory & NRI (7)
+                </button>
+                <button class="filter-pill whitespace-nowrap px-4 py-2 rounded-full text-xs md:text-sm font-semibold border border-taupe/30 bg-white text-ink hover:bg-limestone" data-category="legal">
+                    ⚖️ Legal & Registry (1)
+                </button>
+            </div>
+
+            <!-- Live Search Bar -->
+            <div class="relative w-full md:w-72 flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="absolute left-3 top-3 text-taupe"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                <input type="text" id="service-search-input" placeholder="Search service, e.g. plot, loan..." class="w-full pl-9 pr-4 py-2 bg-white border border-taupe/30 rounded-full text-xs md:text-sm focus:outline-none focus:border-brass transition">
+            </div>
+        </div>
+    </section>
+
+    <!-- === SECTION 3: SERVICES GRID (Vengeance UI & Animaster interactions) === -->
+    <section class="py-12 px-4 max-w-7xl mx-auto">
+        <div class="flex items-center justify-between mb-8">
+            <h2 class="font-display text-2xl md:text-3xl font-bold text-navy" id="service-section-title">
+                Available Real Estate Services
+            </h2>
+            <span class="text-sm font-semibold text-taupe" id="services-count-indicator">Showing 19 of 19 Services</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="services-grid">
+
+            <!-- SERVICE 1: Home Buying and Sales -->
+            <div class="service-card-ui p-6" data-category="residential" data-keywords="home house buy sell residential apartment flat villa">
+                <div class="flex items-start justify-between gap-4 mb-4">
+                    <div class="w-12 h-12 rounded-xl bg-brass/15 text-brass flex items-center justify-center font-bold">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
+                    </div>
+                    <span class="text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded bg-limestone text-taupe border border-taupe/20">Residential</span>
+                </div>
+                <h3 class="font-display text-xl font-bold text-navy mb-2">Home Buying & Sales</h3>
+                <p class="text-taupe text-sm leading-relaxed mb-4 flex-grow">
+                    Expert assistance in navigating Ujjain's residential market. We match your family’s lifestyle needs and budget with verified, high-quality homes in prime localities.
+                </p>
+                <div class="bg-limestone/60 rounded-lg p-3 mb-6 text-xs text-ink/80 flex flex-col gap-1.5">
+                    <div class="flex items-center gap-2"><span class="text-brass font-bold">✓</span> Free locality & pricing advisory</div>
+                    <div class="flex items-center gap-2"><span class="text-brass font-bold">✓</span> 100% legal title verification</div>
+                    <div class="flex items-center gap-2"><span class="text-brass font-bold">✓</span> Accompanied private site visits</div>
+                </div>
+                <div class="grid grid-cols-2 gap-2 pt-2 border-t border-taupe/15 mt-auto">
+                    <a href="https://wa.me/919876543210?text=Hi%20Shri%20Manibhadra%20Brokers,%20I%20am%20interested%20in%20Home%20Buying%20and%20Sales%20services." target="_blank" class="flex items-center justify-center gap-1.5 bg-[#25D366] text-white py-2 px-3 rounded-lg text-xs font-semibold hover:opacity-90 transition">
+                        💬 WhatsApp
+                    </a>
+                    <button onclick="openBookingModal('Home Buying & Sales')" class="flex items-center justify-center gap-1.5 bg-navy text-white py-2 px-3 rounded-lg text-xs font-semibold hover:bg-navy-light transition">
+                        📅 Book Consult
+                    </button>
+                </div>
+            </div>
+
+            <!-- SERVICE 2: Luxury Properties -->
+            <div class="service-card-ui p-6" data-category="residential" data-keywords="luxury villa penthouse gated bungalow premium">
+                <div class="flex items-start justify-between gap-4 mb-4">
+                    <div class="w-12 h-12 rounded-xl bg-brass/15 text-brass flex items-center justify-center font-bold">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    </div>
+                    <span class="text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded bg-limestone text-taupe border border-taupe/20">Residential</span>
+                </div>
+                <h3 class="font-display text-xl font-bold text-navy mb-2">Luxury Properties</h3>
+                <p class="text-taupe text-sm leading-relaxed mb-4 flex-grow">
+                    Gain exclusive access to Ujjain’s most coveted luxury villas, high-end duplexes, and prestigious gated communities with world-class amenities.
+                </p>
+                <div class="bg-limestone/60 rounded-lg p-3 mb-6 text-xs text-ink/80 flex flex-col gap-1.5">
+                    <div class="flex items-center gap-2"><span class="text-brass font-bold">✓</span> Exclusive off-market inventory</div>
+                    <div class="flex items-center gap-2"><span class="text-brass font-bold">✓</span> Private VIP site walkthroughs</div>
+                    <div class="flex items-center gap-2"><span class="text-brass font-bold">✓</span> Confidential deal structuring</div>
+                </div>
+                <div class="grid grid-cols-2 gap-2 pt-2 border-t border-taupe/15 mt-auto">
+                    <a href="https://wa.me/919876543210?text=Hi%20Shri%20Manibhadra%20Brokers,%20I%20am%20interested%20in%20Luxury%20Properties%20in%20Ujjain." target="_blank" class="flex items-center justify-center gap-1.5 bg-[#25D366] text-white py-2 px-3 rounded-lg text-xs font-semibold hover:opacity-90 transition">
+                        💬 WhatsApp
+                    </a>
+                    <button onclick="openBookingModal('Luxury Properties')" class="flex items-center justify-center gap-1.5 bg-navy text-white py-2 px-3 rounded-lg text-xs font-semibold hover:bg-navy-light transition">
+                        📅 Book Consult
+                    </button>
+                </div>
+            </div>
+
+            <!-- SERVICE 3: Luxury Property Buying and Sales -->
+            <div class="service-card-ui p-6" data-category="residential" data-keywords="luxury high net worth hni private estate duplex">
+                <div class="flex items-start justify-between gap-4 mb-4">
+                    <div class="w-12 h-12 rounded-xl bg-brass/15 text-brass flex items-center justify-center font-bold">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                    </div>
+                    <span class="text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded bg-limestone text-taupe border border-taupe/20">Residential</span>
+                </div>
+                <h3 class="font-display text-xl font-bold text-navy mb-2">Luxury Buying & Sales Representation</h3>
+                <p class="text-taupe text-sm leading-relaxed mb-4 flex-grow">
+                    Discreet and bespoke handling of premium property transactions for high-net-worth individuals, industrialists, and prominent families.
+                </p>
+                <div class="bg-limestone/60 rounded-lg p-3 mb-6 text-xs text-ink/80 flex flex-col gap-1.5">
+                    <div class="flex items-center gap-2"><span class="text-brass font-bold">✓</span> Complete privacy & NDA protection</div>
+                    <div class="flex items-center gap-2"><span class="text-brass font-bold">✓</span> Precision valuation & negotiation</div>
+                    <div class="flex items-center gap-2"><span class="text-brass font-bold">✓</span> Seamless escrow & registration</div>
+                </div>
+                <div class="grid grid-cols-2 gap-2 pt-2 border-t border-taupe/15 mt-auto">
+                    <a href="https://wa.me/919876543210?text=Hi%20Shri%20Manibhadra%20Brokers,%20I%20am%20interested%20in%20Luxury%20Property%20Representation." target="_blank" class="flex items-center justify-center gap-1.5 bg-[#25D366] text-white py-2 px-3 rounded-lg text-xs font-semibold hover:opacity-90 transition">
+                        💬 WhatsApp
+                    </a>
+                    <button onclick="openBookingModal('Luxury Representation')" class="flex items-center justify-center gap-1.5 bg-navy text-white py-2 px-3 rounded-lg text-xs font-semibold hover:bg-navy-light transition">
+                        📅 Book Consult
+                    </button>
+                </div>
+            </div>
+
+            <!-- SERVICE 4: New Construction Services -->
+            <div class="service-card-ui p-6" data-category="residential" data-keywords="new construction builder under construction rera project">
+                <div class="flex items-start justify-between gap-4 mb-4">
+                    <div class="w-12 h-12 rounded-xl bg-brass/15 text-brass flex items-center justify-center font-bold">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+                    </div>
+                    <span class="text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded bg-limestone text-taupe border border-taupe/20">Residential</span>
+                </div>
+                <h3 class="font-display text-xl font-bold text-navy mb-2">New Construction Services</h3>
+                <p class="text-taupe text-sm leading-relaxed mb-4 flex-grow">
+                    Expert guidance on under-construction and new-launch projects. We verify builder track records, RERA compliance, and price-appreciation potential.
+                </p>
+                <div class="bg-limestone/60 rounded-lg p-3 mb-6 text-xs text-ink/80 flex flex-col gap-1.5">
+                    <div class="flex items-center gap-2"><span class="text-brass font-bold">✓</span> RERA certificate verification</div>
+                    <div class="flex items-center gap-2"><span class="text-brass font-bold">✓</span> Pre-launch early-bird pricing</div>
+                    <div class="flex items-center gap-2"><span class="text-brass font-bold">✓</span> Construction milestone audits</div>
+                </div>
+                <div class="grid grid-cols-2 gap-2 pt-2 border-t border-taupe/15 mt-auto">
+                    <a href="https://wa.me/919876543210?text=Hi%20Shri%20Manibhadra%20Brokers,%20I%20am%20inquiring%20about%20New%20Construction%20Projects." target="_blank" class="flex items-center justify-center gap-1.5 bg-[#25D366] text-white py-2 px-3 rounded-lg text-xs font-semibold hover:opacity-90 transition">
+                        💬 WhatsApp
+                    </a>
+                    <button onclick="openBookingModal('New Construction Projects')" class="flex items-center justify-center gap-1.5 bg-navy text-white py-2 px-3 rounded-lg text-xs font-semibold hover:bg-navy-light transition">
+                        📅 Book Consult
+                    </button>
+                </div>
+            </div>
+
+            <!-- SERVICE 5: Property Rental Assistance -->
+            <div class="service-card-ui p-6" data-category="residential" data-keywords="rent rental lease tenant landlord agreement">
+                <div class="flex items-start justify-between gap-4 mb-4">
+                    <div class="w-12 h-12 rounded-xl bg-brass/15 text-brass flex items-center justify-center font-bold">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                    </div>
+                    <span class="text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded bg-limestone text-taupe border border-taupe/20">Residential</span>
+                </div>
+                <h3 class="font-display text-xl font-bold text-navy mb-2">Property Rental Assistance</h3>
+                <p class="text-taupe text-sm leading-relaxed mb-4 flex-grow">
+                    Comprehensive leasing assistance for landlords and tenants. We handle tenant background checks, police verification, and legally sound rental agreements.
+                </p>
+                <div class="bg-limestone/60 rounded-lg p-3 mb-6 text-xs text-ink/80 flex flex-col gap-1.5">
+                    <div class="flex items-center gap-2"><span class="text-brass font-bold">✓</span> Verified tenant screening</div>
+                    <div class="flex items-center gap-2"><span class="text-brass font-bold">✓</span> Legal lease drafting & e-stamp</div>
+                    <div class="flex items-center gap-2"><span class="text-brass font-bold">✓</span> Timely rental yield optimization</div>
+                </div>
+                <div class="grid grid-cols-2 gap-2 pt-2 border-t border-taupe/15 mt-auto">
+                    <a href="https://wa.me/919876543210?text=Hi%20Shri%20Manibhadra%20Brokers,%20I%20need%20Rental%20Assistance%20in%20Ujjain." target="_blank" class="flex items-center justify-center gap-1.5 bg-[#25D366] text-white py-2 px-3 rounded-lg text-xs font-semibold hover:opacity-90 transition">
+                        💬 WhatsApp
+                    </a>
+                    <button onclick="openBookingModal('Rental Assistance')" class="flex items-center justify-center gap-1.5 bg-navy text-white py-2 px-3 rounded-lg text-xs font-semibold hover:bg-navy-light transition">
+                        📅 Book Consult
+                    </button>
+                </div>
+            </div>
+
+            <!-- SERVICE 6: Commercial Property Buying and Sales -->
+            <div class="service-card-ui p-6" data-category="commercial" data-keywords="commercial office shop retail showroom complex">
+                <div class="flex items-start justify-between gap-4 mb-4">
+                    <div class="w-12 h-12 rounded-xl bg-brass/15 text-brass flex items-center justify-center font-bold">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18"></path><path d="M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16"></path><path d="M9 21v-4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v4"></path></svg>
+                    </div>
+                    <span class="text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded bg-limestone text-taupe border border-taupe/20">Commercial</span>
+                </div>
+                <h3 class="font-display text-xl font-bold text-navy mb-2">Commercial Buying & Sales</h3>
+                <p class="text-taupe text-sm leading-relaxed mb-4 flex-grow">
+                    Strategic acquisition of prime commercial real estate in Freeganj, Nanakheda, and Indore-Ujjain corridor for retail showrooms, corporate offices, and institutions.
+                </p>
+                <div class="bg-limestone/60 rounded-lg p-3 mb-6 text-xs text-ink/80 flex flex-col gap-1.5">
+                    <div class="flex items-center gap-2"><span class="text-brass font-bold">✓</span> Prime commercial frontage selection</div>
+                    <div class="flex items-center gap-2"><span class="text-brass font-bold">✓</span> Commercial zoning & NOC verification</div>
+                    <div class="flex items-center gap-2"><span class="text-brass font-bold">✓</span> High rental yield asset identification</div>
+                </div>
+                <div class="grid grid-cols-2 gap-2 pt-2 border-t border-taupe/15 mt-auto">
+                    <a href="https://wa.me/919876543210?text=Hi%20Shri%20Manibhadra%20Brokers,%20I%20am%20interested%20in%20Commercial%20Property." target="_blank" class="flex items-center justify-center gap-1.5 bg-[#25D366] text-white py-2 px-3 rounded-lg text-xs font-semibold hover:opacity-90 transition">
+                        💬 WhatsApp
+                    </a>
+                    <button onclick="openBookingModal('Commercial Buying & Sales')" class="flex items-center justify-center gap-1.5 bg-navy text-white py-2 px-3 rounded-lg text-xs font-semibold hover:bg-navy-light transition">
+                        📅 Book Consult
+                    </button>
+                </div>
+            </div>
+
+            <!-- SERVICE 7: Commercial Property Consulting -->
+            <div class="service-card-ui p-6" data-category="commercial" data-keywords="commercial consulting footfall roi feasibility">
+                <div class="flex items-start justify-between gap-4 mb-4">
+                    <div class="w-12 h-12 rounded-xl bg-brass/15 text-brass flex items-center justify-center font-bold">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path><path d="M22 12A10 10 0 0 0 12 2v10z"></path></svg>
+                    </div>
+                    <span class="text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded bg-limestone text-taupe border border-taupe/20">Commercial</span>
+                </div>
+                <h3 class="font-display text-xl font-bold text-navy mb-2">Commercial Property Consulting</h3>
+                <p class="text-taupe text-sm leading-relaxed mb-4 flex-grow">
+                    Data-driven advisory for businesses and investors. We analyze pedestrian footfall, vehicular traffic, catchment demographics, and return on investment.
+                </p>
+                <div class="bg-limestone/60 rounded-lg p-3 mb-6 text-xs text-ink/80 flex flex-col gap-1.5">
+                    <div class="flex items-center gap-2"><span class="text-brass font-bold">✓</span> Micro-market catchment analysis</div>
+                    <div class="flex items-center gap-2"><span class="text-brass font-bold">✓</span> Rental yield & ROI projections</div>
+                    <div class="flex items-center gap-2"><span class="text-brass font-bold">✓</span> Lease structuring & tenant mix</div>
+                </div>
+                <div class="grid grid-cols-2 gap-2 pt-2 border-t border-taupe/15 mt-auto">
+                    <a href="https://wa.me/919876543210?text=Hi%20Shri%20Manibhadra%20Brokers,%20I%20am%20inquiring%20about%20Commercial%20Consulting." target="_blank" class="flex items-center justify-center gap-1.5 bg-[#25D366] text-white py-2 px-3 rounded-lg text-xs font-semibold hover:opacity-90 transition">
+                        💬 WhatsApp
+                    </a>
+                    <button onclick="openBookingModal('Commercial Consulting')" class="flex items-center justify-center gap-1.5 bg-navy text-white py-2 px-3 rounded-lg text-xs font-semibold hover:bg-navy-light transition">
+                        📅 Book Consult
+                    </button>
+                </div>
+            </div>
+
+            <!-- SERVICE 8: Property Development -->
+            <div class="service-card-ui p-6" data-category="commercial" data-keywords="development builder developer joint venture jv construction">
+                <div class="flex items-start justify-between gap-4 mb-4">
+                    <div class="w-12 h-12 rounded-xl bg-brass/15 text-brass flex items-center justify-center font-bold">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                    </div>
+                    <span class="text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded bg-limestone text-taupe border border-taupe/20">Commercial</span>
+                </div>
+                <h3 class="font-display text-xl font-bold text-navy mb-2">Property Development & Joint Ventures</h3>
+                <p class="text-taupe text-sm leading-relaxed mb-4 flex-grow">
+                    End-to-end facilitation for developers and landowners. We structure Joint Ventures (JV), Joint Development Agreements (JDA), and turn-key project execution.
+                </p>
+                <div class="bg-limestone/60 rounded-lg p-3 mb-6 text-xs text-ink/80 flex flex-col gap-1.5">
+                    <div class="flex items-center gap-2"><span class="text-brass font-bold">✓</span> JV / JDA ratio structuring</div>
+                    <div class="flex items-center gap-2"><span class="text-brass font-bold">✓</span> Town planning (T&CP) clearances</div>
+                    <div class="flex items-center gap-2"><span class="text-brass font-bold">✓</span> Strategic sales & marketing launch</div>
+                </div>
+                <div class="grid grid-cols-2 gap-2 pt-2 border-t border-taupe/15 mt-auto">
+                    <a href="https://wa.me/919876543210?text=Hi%20Shri%20Manibhadra%20Brokers,%20I%20want%20to%20discuss%20Property%20Development%20JV." target="_blank" class="flex items-center justify-center gap-1.5 bg-[#25D366] text-white py-2 px-3 rounded-lg text-xs font-semibold hover:opacity-90 transition">
+                        💬 WhatsApp
+                    </a>
+                    <button onclick="openBookingModal('Property Development')" class="flex items-center justify-center gap-1.5 bg-navy text-white py-2 px-3 rounded-lg text-xs font-semibold hover:bg-navy-light transition">
+                        📅 Book Consult
+                    </button>
+                </div>
+            </div>
+
+            <!-- SERVICE 9: Property Development Consulting -->
+            <div class="service-card-ui p-6" data-category="commercial" data-keywords="development consulting feasibility land conversion">
+                <div class="flex items-start justify-between gap-4 mb-4">
+                    <div class="w-12 h-12 rounded-xl bg-brass/15 text-brass flex items-center justify-center font-bold">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+                    </div>
+                    <span class="text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded bg-limestone text-taupe border border-taupe/20">Commercial</span>
+                </div>
+                <h3 class="font-display text-xl font-bold text-navy mb-2">Development Feasibility Consulting</h3>
+                <p class="text-taupe text-sm leading-relaxed mb-4 flex-grow">
+                    Pre-construction feasibility audits, FAR/FSI calculations, municipal zoning compliance, and revenue-maximizing architectural space planning.
+                </p>
+                <div class="bg-limestone/60 rounded-lg p-3 mb-6 text-xs text-ink/80 flex flex-col gap-1.5">
+                    <div class="flex items-center gap-2"><span class="text-brass font-bold">✓</span> Financial feasibility models</div>
+                    <div class="flex items-center gap-2"><span class="text-brass font-bold">✓</span> Regulatory & environmental risk audit</div>
+                    <div class="flex items-center gap-2"><span class="text-brass font-bold">✓</span> Maximum usable FAR optimization</div>
+                </div>
+                <div class="grid grid-cols-2 gap-2 pt-2 border-t border-taupe/15 mt-auto">
+                    <a href="https://wa.me/919876543210?text=Hi%20Shri%20Manibhadra%20Brokers,%20I%20need%20Development%20Feasibility%20Consulting." target="_blank" class="flex items-center justify-center gap-1.5 bg-[#25D366] text-white py-2 px-3 rounded-lg text-xs font-semibold hover:opacity-90 transition">
+                        💬 WhatsApp
+                    </a>
+                    <button onclick="openBookingModal('Development Feasibility')" class="flex items-center justify-center gap-1.5 bg-navy text-white py-2 px-3 rounded-lg text-xs font-semibold hover:bg-navy-light transition">
+                        📅 Book Consult
+                    </button>
+                </div>
+            </div>
+
+            <!-- SERVICE 10: Purchase and Sell Plots Land -->
+            <div class="service-card-ui p-6" data-category="plots" data-keywords="plot residential plot commercial plot land buy sell">
+                <div class="flex items-start justify-between gap-4 mb-4">
+                    <div class="w-12 h-12 rounded-xl bg-brass/15 text-brass flex items-center justify-center font-bold">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    </div>
+                    <span class="text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded bg-limestone text-taupe border border-taupe/20">Plots & Land</span>
+                </div>
+                <h3 class="font-display text-xl font-bold text-navy mb-2">Purchase & Sell Plots</h3>
+                <p class="text-taupe text-sm leading-relaxed mb-4 flex-grow">
+                    Secure residential and commercial plots in approved layouts across Ujjain. We ensure clear boundaries, valid demarcation, and high future appreciation.
+                </p>
+                <div class="bg-limestone/60 rounded-lg p-3 mb-6 text-xs text-ink/80 flex flex-col gap-1.5">
+                    <div class="flex items-center gap-2"><span class="text-brass font-bold">✓</span> TNCP & RERA approved colonies</div>
+                    <div class="flex items-center gap-2"><span class="text-brass font-bold">✓</span> Physical boundary demarcation</div>
+                    <div class="flex items-center gap-2"><span class="text-brass font-bold">✓</span> Direct negotiation with genuine owners</div>
+                </div>
+                <div class="grid grid-cols-2 gap-2 pt-2 border-t border-taupe/15 mt-auto">
+                    <a href="https://wa.me/919876543210?text=Hi%20Shri%20Manibhadra%20Brokers,%20I%20am%20looking%20for%20Plots%20in%20Ujjain." target="_blank" class="flex items-center justify-center gap-1.5 bg-[#25D366] text-white py-2 px-3 rounded-lg text-xs font-semibold hover:opacity-90 transition">
+                        💬 WhatsApp
+                    </a>
+                    <button onclick="openBookingModal('Plot Purchase & Sales')" class="flex items-center justify-center gap-1.5 bg-navy text-white py-2 px-3 rounded-lg text-xs font-semibold hover:bg-navy-light transition">
+                        📅 Book Consult
+                    </button>
+                </div>
+            </div>
+
+            <!-- SERVICE 11: Land Buying and Sales -->
+            <div class="service-card-ui p-6" data-category="plots" data-keywords="agricultural land farm farmland acreage highway land">
+                <div class="flex items-start justify-between gap-4 mb-4">
+                    <div class="w-12 h-12 rounded-xl bg-brass/15 text-brass flex items-center justify-center font-bold">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+                    </div>
+                    <span class="text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded bg-limestone text-taupe border border-taupe/20">Plots & Land</span>
+                </div>
+                <h3 class="font-display text-xl font-bold text-navy mb-2">Agricultural & Highway Land</h3>
+                <p class="text-taupe text-sm leading-relaxed mb-4 flex-grow">
+                    Facilitating large-scale agricultural parcels, farmhouse land, and high-yield highway corridors along Indore-Ujjain, Nagda, and Dewas routes.
+                </p>
+                <div class="bg-limestone/60 rounded-lg p-3 mb-6 text-xs text-ink/80 flex flex-col gap-1.5">
+                    <div class="flex items-center gap-2"><span class="text-brass font-bold">✓</span> Revenue records (Khasra/Khatauni) audit</div>
+                    <div class="flex items-center gap-2"><span class="text-brass font-bold">✓</span> Land conversion (Diversion) assistance</div>
+                    <div class="flex items-center gap-2"><span class="text-brass font-bold">✓</span> Ground water & road access survey</div>
+                </div>
+                <div class="grid grid-cols-2 gap-2 pt-2 border-t border-taupe/15 mt-auto">
+                    <a href="https://wa.me/919876543210?text=Hi%20Shri%20Manibhadra%20Brokers,%20I%20am%20interested%20in%20Agricultural%20Land." target="_blank" class="flex items-center justify-center gap-1.5 bg-[#25D366] text-white py-2 px-3 rounded-lg text-xs font-semibold hover:opacity-90 transition">
+                        💬 WhatsApp
+                    </a>
+                    <button onclick="openBookingModal('Agricultural Land')" class="flex items-center justify-center gap-1.5 bg-navy text-white py-2 px-3 rounded-lg text-xs font-semibold hover:bg-navy-light transition">
+                        📅 Book Consult
+                    </button>
+                </div>
+            </div>
+
+            <!-- SERVICE 12: Property Consultant -->
+            <div class="service-card-ui p-6" data-category="advisory" data-keywords="consultant advisory guidance property advice expert">
+                <div class="flex items-start justify-between gap-4 mb-4">
+                    <div class="w-12 h-12 rounded-xl bg-brass/15 text-brass flex items-center justify-center font-bold">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                    </div>
+                    <span class="text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded bg-limestone text-taupe border border-taupe/20">Advisory</span>
+                </div>
+                <h3 class="font-display text-xl font-bold text-navy mb-2">Dedicated Property Consultant</h3>
+                <p class="text-taupe text-sm leading-relaxed mb-4 flex-grow">
+                    One-on-one personal advisory to navigate your entire real estate journey. Unbiased advice tailored to your budget, capital safety, and life goals.
+                </p>
+                <div class="bg-limestone/60 rounded-lg p-3 mb-6 text-xs text-ink/80 flex flex-col gap-1.5">
+                    <div class="flex items-center gap-2"><span class="text-brass font-bold">✓</span> Personalized property portfolio roadmap</div>
+                    <div class="flex items-center gap-2"><span class="text-brass font-bold">✓</span> Real-time Ujjain rate trends</div>
+                    <div class="flex items-center gap-2"><span class="text-brass font-bold">✓</span> Transparent, non-pressured guidance</div>
+                </div>
+                <div class="grid grid-cols-2 gap-2 pt-2 border-t border-taupe/15 mt-auto">
+                    <a href="https://wa.me/919876543210?text=Hi%20Shri%20Manibhadra%20Brokers,%20I%20need%20a%20Personal%20Property%20Consultant." target="_blank" class="flex items-center justify-center gap-1.5 bg-[#25D366] text-white py-2 px-3 rounded-lg text-xs font-semibold hover:opacity-90 transition">
+                        💬 WhatsApp
+                    </a>
+                    <button onclick="openBookingModal('Personal Consultant')" class="flex items-center justify-center gap-1.5 bg-navy text-white py-2 px-3 rounded-lg text-xs font-semibold hover:bg-navy-light transition">
+                        📅 Book Consult
+                    </button>
+                </div>
+            </div>
+
+            <!-- SERVICE 13: Comparative Property Market Analysis -->
+            <div class="service-card-ui p-6" data-category="advisory" data-keywords="valuation cma market analysis price check assessment">
+                <div class="flex items-start justify-between gap-4 mb-4">
+                    <div class="w-12 h-12 rounded-xl bg-brass/15 text-brass flex items-center justify-center font-bold">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                    </div>
+                    <span class="text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded bg-limestone text-taupe border border-taupe/20">Advisory</span>
+                </div>
+                <h3 class="font-display text-xl font-bold text-navy mb-2">Comparative Market Analysis (CMA)</h3>
+                <p class="text-taupe text-sm leading-relaxed mb-4 flex-grow">
+                    Accurate property valuation based on recent registry deeds, ongoing transactions, and micro-market demand so you never under-sell or over-pay.
+                </p>
+                <div class="bg-limestone/60 rounded-lg p-3 mb-6 text-xs text-ink/80 flex flex-col gap-1.5">
+                    <div class="flex items-center gap-2"><span class="text-brass font-bold">✓</span> Comparative registry rate reports</div>
+                    <div class="flex items-center gap-2"><span class="text-brass font-bold">✓</span> Fair market valuation certificates</div>
+                    <div class="flex items-center gap-2"><span class="text-brass font-bold">✓</span> Ready reckoner & collector rate check</div>
+                </div>
+                <div class="grid grid-cols-2 gap-2 pt-2 border-t border-taupe/15 mt-auto">
+                    <a href="https://wa.me/919876543210?text=Hi%20Shri%20Manibhadra%20Brokers,%20I%20need%20a%20Comparative%20Market%20Analysis." target="_blank" class="flex items-center justify-center gap-1.5 bg-[#25D366] text-white py-2 px-3 rounded-lg text-xs font-semibold hover:opacity-90 transition">
+                        💬 WhatsApp
+                    </a>
+                    <button onclick="openBookingModal('Market Valuation CMA')" class="flex items-center justify-center gap-1.5 bg-navy text-white py-2 px-3 rounded-lg text-xs font-semibold hover:bg-navy-light transition">
+                        📅 Book Consult
+                    </button>
+                </div>
+            </div>
+
+            <!-- SERVICE 14: Property Investing -->
+            <div class="service-card-ui p-6" data-category="advisory" data-keywords="investing investment capital growth returns wealth">
+                <div class="flex items-start justify-between gap-4 mb-4">
+                    <div class="w-12 h-12 rounded-xl bg-brass/15 text-brass flex items-center justify-center font-bold">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                    </div>
+                    <span class="text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded bg-limestone text-taupe border border-taupe/20">Advisory</span>
+                </div>
+                <h3 class="font-display text-xl font-bold text-navy mb-2">High-Growth Property Investing</h3>
+                <p class="text-taupe text-sm leading-relaxed mb-4 flex-grow">
+                    Strategic investment advisory targeting 15%+ annual appreciation zones in Ujjain driven by Simhastha 2028 infrastructure, industrial corridors, and tourism.
+                </p>
+                <div class="bg-limestone/60 rounded-lg p-3 mb-6 text-xs text-ink/80 flex flex-col gap-1.5">
+                    <div class="flex items-center gap-2"><span class="text-brass font-bold">✓</span> Simhastha 2028 high-growth corridors</div>
+                    <div class="flex items-center gap-2"><span class="text-brass font-bold">✓</span> Pre-leased commercial assets with 8% yield</div>
+                    <div class="flex items-center gap-2"><span class="text-brass font-bold">✓</span> Strategic exit planning & capital gains advice</div>
+                </div>
+                <div class="grid grid-cols-2 gap-2 pt-2 border-t border-taupe/15 mt-auto">
+                    <a href="https://wa.me/919876543210?text=Hi%20Shri%20Manibhadra%20Brokers,%20I%20want%20to%20invest%20in%20Ujjain%20Real%20Estate." target="_blank" class="flex items-center justify-center gap-1.5 bg-[#25D366] text-white py-2 px-3 rounded-lg text-xs font-semibold hover:opacity-90 transition">
+                        💬 WhatsApp
+                    </a>
+                    <button onclick="openBookingModal('Property Investment Advisory')" class="flex items-center justify-center gap-1.5 bg-navy text-white py-2 px-3 rounded-lg text-xs font-semibold hover:bg-navy-light transition">
+                        📅 Book Consult
+                    </button>
+                </div>
+            </div>
+
+            <!-- SERVICE 15: Buying Agent Services -->
+            <div class="service-card-ui p-6" data-category="advisory" data-keywords="buying agent buyer representation search negotiate">
+                <div class="flex items-start justify-between gap-4 mb-4">
+                    <div class="w-12 h-12 rounded-xl bg-brass/15 text-brass flex items-center justify-center font-bold">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    </div>
+                    <span class="text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded bg-limestone text-taupe border border-taupe/20">Advisory</span>
+                </div>
+                <h3 class="font-display text-xl font-bold text-navy mb-2">Dedicated Buyer's Agent</h3>
+                <p class="text-taupe text-sm leading-relaxed mb-4 flex-grow">
+                    Exclusive buyer-side representation. We inspect properties, scrutinize legal documents, and fiercely negotiate the lowest purchase price on your behalf.
+                </p>
+                <div class="bg-limestone/60 rounded-lg p-3 mb-6 text-xs text-ink/80 flex flex-col gap-1.5">
+                    <div class="flex items-center gap-2"><span class="text-brass font-bold">✓</span> 100% fiduciary loyalty to the buyer</div>
+                    <div class="flex items-center gap-2"><span class="text-brass font-bold">✓</span> Expert price negotiation tactics</div>
+                    <div class="flex items-center gap-2"><span class="text-brass font-bold">✓</span> Zero hidden markups or inflated pricing</div>
+                </div>
+                <div class="grid grid-cols-2 gap-2 pt-2 border-t border-taupe/15 mt-auto">
+                    <a href="https://wa.me/919876543210?text=Hi%20Shri%20Manibhadra%20Brokers,%20I%20need%20a%20Dedicated%20Buyer's%20Agent." target="_blank" class="flex items-center justify-center gap-1.5 bg-[#25D366] text-white py-2 px-3 rounded-lg text-xs font-semibold hover:opacity-90 transition">
+                        💬 WhatsApp
+                    </a>
+                    <button onclick="openBookingModal('Buyer Agent Services')" class="flex items-center justify-center gap-1.5 bg-navy text-white py-2 px-3 rounded-lg text-xs font-semibold hover:bg-navy-light transition">
+                        📅 Book Consult
+                    </button>
+                </div>
+            </div>
+
+            <!-- SERVICE 16: Seller's Agent Services -->
+            <div class="service-card-ui p-6" data-category="advisory" data-keywords="seller agent sell listing marketing fast sale">
+                <div class="flex items-start justify-between gap-4 mb-4">
+                    <div class="w-12 h-12 rounded-xl bg-brass/15 text-brass flex items-center justify-center font-bold">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                    </div>
+                    <span class="text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded bg-limestone text-taupe border border-taupe/20">Advisory</span>
+                </div>
+                <h3 class="font-display text-xl font-bold text-navy mb-2">Dedicated Seller's Agent</h3>
+                <p class="text-taupe text-sm leading-relaxed mb-4 flex-grow">
+                    Sell your property fast at maximum market valuation. We leverage our network of 1,000+ active buyers, targeted digital marketing, and qualified viewings.
+                </p>
+                <div class="bg-limestone/60 rounded-lg p-3 mb-6 text-xs text-ink/80 flex flex-col gap-1.5">
+                    <div class="flex items-center gap-2"><span class="text-brass font-bold">✓</span> Professional photography & listing</div>
+                    <div class="flex items-center gap-2"><span class="text-brass font-bold">✓</span> Pre-qualified buyers only (no time wasters)</div>
+                    <div class="flex items-center gap-2"><span class="text-brass font-bold">✓</span> Fast closing with verified payments</div>
+                </div>
+                <div class="grid grid-cols-2 gap-2 pt-2 border-t border-taupe/15 mt-auto">
+                    <a href="https://wa.me/919876543210?text=Hi%20Shri%20Manibhadra%20Brokers,%20I%20want%20to%20sell%20my%20property%20in%20Ujjain." target="_blank" class="flex items-center justify-center gap-1.5 bg-[#25D366] text-white py-2 px-3 rounded-lg text-xs font-semibold hover:opacity-90 transition">
+                        💬 WhatsApp
+                    </a>
+                    <button onclick="openBookingModal('Seller Agent Services')" class="flex items-center justify-center gap-1.5 bg-navy text-white py-2 px-3 rounded-lg text-xs font-semibold hover:bg-navy-light transition">
+                        📅 Book Consult
+                    </button>
+                </div>
+            </div>
+
+            <!-- SERVICE 17: International Property Buying and Sales (NRI) -->
+            <div class="service-card-ui p-6" data-category="advisory" data-keywords="nri international overseas foreign poa power of attorney">
+                <div class="flex items-start justify-between gap-4 mb-4">
+                    <div class="w-12 h-12 rounded-xl bg-brass/15 text-brass flex items-center justify-center font-bold">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                    </div>
+                    <span class="text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded bg-limestone text-taupe border border-taupe/20">Advisory</span>
+                </div>
+                <h3 class="font-display text-xl font-bold text-navy mb-2">NRI & International Client Desk</h3>
+                <p class="text-taupe text-sm leading-relaxed mb-4 flex-grow">
+                    Remote property management, buying, and selling for Non-Resident Indians. We manage video walkthroughs, Power of Attorney (POA), NRE/NRO compliance, and repatriation.
+                </p>
+                <div class="bg-limestone/60 rounded-lg p-3 mb-6 text-xs text-ink/80 flex flex-col gap-1.5">
+                    <div class="flex items-center gap-2"><span class="text-brass font-bold">✓</span> 4K video walkthroughs & live drone tours</div>
+                    <div class="flex items-center gap-2"><span class="text-brass font-bold">✓</span> Consular POA & FEMA legal handling</div>
+                    <div class="flex items-center gap-2"><span class="text-brass font-bold">✓</span> Repatriation & capital gains support</div>
+                </div>
+                <div class="grid grid-cols-2 gap-2 pt-2 border-t border-taupe/15 mt-auto">
+                    <a href="https://wa.me/919876543210?text=Hi%20Shri%20Manibhadra%20Brokers,%20I%20am%20an%20NRI%20looking%20for%20property%20services." target="_blank" class="flex items-center justify-center gap-1.5 bg-[#25D366] text-white py-2 px-3 rounded-lg text-xs font-semibold hover:opacity-90 transition">
+                        💬 WhatsApp
+                    </a>
+                    <button onclick="openBookingModal('NRI Property Desk')" class="flex items-center justify-center gap-1.5 bg-navy text-white py-2 px-3 rounded-lg text-xs font-semibold hover:bg-navy-light transition">
+                        📅 Book Consult
+                    </button>
+                </div>
+            </div>
+
+            <!-- SERVICE 18: Property Sales -->
+            <div class="service-card-ui p-6" data-category="advisory" data-keywords="sales transaction closing paperwork negotiation deal">
+                <div class="flex items-start justify-between gap-4 mb-4">
+                    <div class="w-12 h-12 rounded-xl bg-brass/15 text-brass flex items-center justify-center font-bold">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1v22"></path><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                    </div>
+                    <span class="text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded bg-limestone text-taupe border border-taupe/20">Advisory</span>
+                </div>
+                <h3 class="font-display text-xl font-bold text-navy mb-2">End-to-End Transaction Closing</h3>
+                <p class="text-taupe text-sm leading-relaxed mb-4 flex-grow">
+                    Hassle-free deal closure covering bank loan coordination, legal search reports, token agreement drafting, and registrar office attendance.
+                </p>
+                <div class="bg-limestone/60 rounded-lg p-3 mb-6 text-xs text-ink/80 flex flex-col gap-1.5">
+                    <div class="flex items-center gap-2"><span class="text-brass font-bold">✓</span> Home loan coordination (SBI, HDFC, ICICI)</div>
+                    <div class="flex items-center gap-2"><span class="text-brass font-bold">✓</span> Token / Bayana agreement drafting</div>
+                    <div class="flex items-center gap-2"><span class="text-brass font-bold">✓</span> Complete sub-registrar coordination</div>
+                </div>
+                <div class="grid grid-cols-2 gap-2 pt-2 border-t border-taupe/15 mt-auto">
+                    <a href="https://wa.me/919876543210?text=Hi%20Shri%20Manibhadra%20Brokers,%20I%20need%20Transaction%20Closing%20support." target="_blank" class="flex items-center justify-center gap-1.5 bg-[#25D366] text-white py-2 px-3 rounded-lg text-xs font-semibold hover:opacity-90 transition">
+                        💬 WhatsApp
+                    </a>
+                    <button onclick="openBookingModal('Transaction Closing Support')" class="flex items-center justify-center gap-1.5 bg-navy text-white py-2 px-3 rounded-lg text-xs font-semibold hover:bg-navy-light transition">
+                        📅 Book Consult
+                    </button>
+                </div>
+            </div>
+
+            <!-- SERVICE 19: Legal Due Diligence, Title Verification & Registration -->
+            <div class="service-card-ui p-6" data-category="legal" data-keywords="legal title verification registry stamp duty registration encumbrance search report">
+                <div class="flex items-start justify-between gap-4 mb-4">
+                    <div class="w-12 h-12 rounded-xl bg-brass/15 text-brass flex items-center justify-center font-bold">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    </div>
+                    <span class="text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded bg-limestone text-taupe border border-taupe/20">Legal & Registry</span>
+                </div>
+                <h3 class="font-display text-xl font-bold text-navy mb-2">Legal Verification & Property Registry</h3>
+                <p class="text-taupe text-sm leading-relaxed mb-4 flex-grow">
+                    Complete 30-year title search, encumbrance check, mutation (namantaran), e-stamping, and official registration assistance at Ujjain Sub-Registrar Office.
+                </p>
+                <div class="bg-limestone/60 rounded-lg p-3 mb-6 text-xs text-ink/80 flex flex-col gap-1.5">
+                    <div class="flex items-center gap-2"><span class="text-brass font-bold">✓</span> 30-Year Encumbrance Search Certificate</div>
+                    <div class="flex items-center gap-2"><span class="text-brass font-bold">✓</span> E-Stamp duty calculation & payment</div>
+                    <div class="flex items-center gap-2"><span class="text-brass font-bold">✓</span> Municipal mutation (Namantaran) filing</div>
+                </div>
+                <div class="grid grid-cols-2 gap-2 pt-2 border-t border-taupe/15 mt-auto">
+                    <a href="https://wa.me/919876543210?text=Hi%20Shri%20Manibhadra%20Brokers,%20I%20need%20Legal%20Title%20Verification%20and%20Registry%20help." target="_blank" class="flex items-center justify-center gap-1.5 bg-[#25D366] text-white py-2 px-3 rounded-lg text-xs font-semibold hover:opacity-90 transition">
+                        💬 WhatsApp
+                    </a>
+                    <button onclick="openBookingModal('Legal Title Verification')" class="flex items-center justify-center gap-1.5 bg-navy text-white py-2 px-3 rounded-lg text-xs font-semibold hover:bg-navy-light transition">
+                        📅 Book Consult
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Empty Search State -->
+        <div id="services-empty-state" class="hidden text-center py-16 px-4 bg-white rounded-2xl border border-taupe/20 mt-6">
+            <div class="w-16 h-16 rounded-full bg-brass/10 text-brass flex items-center justify-center mx-auto mb-4 text-2xl">🔍</div>
+            <h3 class="font-display text-xl font-bold text-navy mb-2">No matching services found</h3>
+            <p class="text-taupe text-sm max-w-md mx-auto mb-6">We couldn't find any services matching your search. Try adjusting keywords or browse all categories.</p>
+            <button onclick="resetFilters()" class="bg-navy hover:bg-navy-light text-white font-semibold py-2.5 px-6 rounded-lg text-sm transition">
+                Show All 19 Services
+            </button>
+        </div>
+    </section>
+
+    <!-- === SECTION 4: INTERACTIVE MP / UJJAIN STAMP DUTY & REGISTRY CALCULATOR === -->
+    <section class="py-16 px-4 bg-limestone border-y border-taupe/20">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-10">
+                <span class="text-xs font-bold uppercase tracking-widest text-brass block mb-1">Financial Planning Tool</span>
+                <h2 class="font-display text-3xl md:text-4xl font-bold text-navy mb-3">
+                    Madhya Pradesh Stamp Duty & Registry Calculator
+                </h2>
+                <p class="text-taupe text-sm md:text-base max-w-2xl mx-auto">
+                    Estimate official government registration charges and stamp duty applicable for property transactions in Ujjain.
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-xl p-6 md:p-10 border border-taupe/20 grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                <!-- Inputs Col -->
+                <div class="md:col-span-6 flex flex-col gap-6">
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <label class="text-xs font-bold uppercase text-navy tracking-wider">Property Value (₹)</label>
+                            <span class="text-lg font-bold text-brass" id="calc-prop-val-display">₹ 50,00,000</span>
+                        </div>
+                        <input type="range" id="calc-prop-slider" min="500000" max="50000000" step="100000" value="5000000" class="w-full h-2.5 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-brass">
+                        <div class="flex justify-between text-[11px] text-taupe mt-1 font-semibold">
+                            <span>₹5 Lakhs</span>
+                            <span>₹2.5 Cr</span>
+                            <span>₹5 Crores</span>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="text-xs font-bold uppercase text-navy tracking-wider block mb-1.5">Property Type</label>
+                            <select id="calc-prop-type" class="w-full p-2.5 bg-paper border border-taupe/30 rounded-lg text-xs md:text-sm font-semibold focus:outline-none focus:border-brass">
+                                <option value="residential">Residential House/Flat</option>
+                                <option value="plot">Plot / Land</option>
+                                <option value="commercial">Commercial Space</option>
+                                <option value="agri">Agricultural Land</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="text-xs font-bold uppercase text-navy tracking-wider block mb-1.5">Buyer Gender</label>
+                            <select id="calc-buyer-gender" class="w-full p-2.5 bg-paper border border-taupe/30 rounded-lg text-xs md:text-sm font-semibold focus:outline-none focus:border-brass">
+                                <option value="male">Male (Standard)</option>
+                                <option value="female">Female (1% Rebate)</option>
+                                <option value="joint">Joint (Male + Female)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <p class="text-[11px] text-taupe leading-relaxed italic border-l-2 border-brass pl-3">
+                        * Note: In MP, standard stamp duty is 7.5% (with municipal cess). Women property buyers receive a 1% concession on stamp duty in municipal areas.
+                    </p>
+                </div>
+
+                <!-- Results Col -->
+                <div class="md:col-span-6 bg-navy text-white rounded-xl p-6 md:p-8 flex flex-col justify-between">
+                    <span class="text-xs font-bold uppercase text-brass tracking-wider mb-4 block">Estimated Government Fees</span>
+                    
+                    <div class="flex flex-col gap-3 mb-6">
+                        <div class="flex justify-between items-center text-sm border-b border-white/10 pb-2">
+                            <span class="text-white/80">Stamp Duty (MP):</span>
+                            <span class="font-bold text-white" id="calc-stamp-duty">₹ 3,75,000</span>
+                        </div>
+                        <div class="flex justify-between items-center text-sm border-b border-white/10 pb-2">
+                            <span class="text-white/80">Registration Fee (3%):</span>
+                            <span class="font-bold text-white" id="calc-reg-fee">₹ 1,50,000</span>
+                        </div>
+                        <div class="flex justify-between items-center text-sm border-b border-white/10 pb-2">
+                            <span class="text-white/80">E-Stamping & Municipal Cess:</span>
+                            <span class="font-bold text-white">Included</span>
+                        </div>
+                        <div class="flex justify-between items-center text-base font-bold text-brass pt-2">
+                            <span>Total Estimated Govt Fees:</span>
+                            <span class="text-xl" id="calc-total-fees">₹ 5,25,000</span>
+                        </div>
+                    </div>
+
+                    <a href="https://wa.me/919876543210?text=Hi%20Shri%20Manibhadra%20Brokers,%20I%20would%20like%20assistance%20with%20Property%20Registration%20and%20Stamp%20Duty." target="_blank" class="w-full bg-brass hover:bg-brass-dark text-navy font-bold py-3 px-4 rounded-lg text-center text-sm transition">
+                        Get Legal & Registry Assistance &rarr;
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- === SECTION 5: 4-STEP PROCESS ROADMAP === -->
+    <section class="py-16 px-4 max-w-7xl mx-auto">
+        <div class="text-center mb-12">
+            <span class="text-xs font-bold uppercase tracking-widest text-brass block mb-1">Our Transparent Methodology</span>
+            <h2 class="font-display text-3xl md:text-4xl font-bold text-navy mb-3">
+                How We Deliver Seamless Results
+            </h2>
+            <p class="text-taupe text-sm md:text-base max-w-2xl mx-auto">
+                Four simple, structured steps designed to make your real estate transaction completely transparent, legally safe, and stress-free.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 relative">
+            <!-- Step 1 -->
+            <div class="bg-white p-6 rounded-xl border border-taupe/20 shadow-sm relative text-center">
+                <div class="step-bubble bg-navy text-brass mx-auto mb-4 text-xl">1</div>
+                <h3 class="font-display text-lg font-bold text-navy mb-2">Requirement Analysis</h3>
+                <p class="text-taupe text-xs leading-relaxed">
+                    We listen to your specific property goals, preferred locations in Ujjain, budget constraints, and timeline.
+                </p>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="bg-white p-6 rounded-xl border border-taupe/20 shadow-sm relative text-center">
+                <div class="step-bubble bg-navy text-brass mx-auto mb-4 text-xl">2</div>
+                <h3 class="font-display text-lg font-bold text-navy mb-2">Curated Shortlist & Visits</h3>
+                <p class="text-taupe text-xs leading-relaxed">
+                    Our advisors curate matching properties and organize comfortable, accompanied site walkthroughs.
+                </p>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="bg-white p-6 rounded-xl border border-taupe/20 shadow-sm relative text-center">
+                <div class="step-bubble bg-navy text-brass mx-auto mb-4 text-xl">3</div>
+                <h3 class="font-display text-lg font-bold text-navy mb-2">30-Yr Legal Due Diligence</h3>
+                <p class="text-taupe text-xs leading-relaxed">
+                    Complete verification of title deeds, Khasra, municipal approvals, RERA numbers, and encumbrance certificates.
+                </p>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="bg-white p-6 rounded-xl border border-taupe/20 shadow-sm relative text-center">
+                <div class="step-bubble bg-brass text-navy mx-auto mb-4 text-xl">4</div>
+                <h3 class="font-display text-lg font-bold text-navy mb-2">Registry & Handover</h3>
+                <p class="text-taupe text-xs leading-relaxed">
+                    Full execution of e-stamping, registration at Sub-Registrar Office Ujjain, and formal possession handover.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- === SECTION 6: FAQ ACCORDION === -->
+    <section class="py-16 px-4 bg-limestone border-t border-taupe/20">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-10">
+                <span class="text-xs font-bold uppercase tracking-widest text-brass block mb-1">Got Questions?</span>
+                <h2 class="font-display text-3xl font-bold text-navy mb-2">
+                    Frequently Asked Questions
+                </h2>
+                <p class="text-taupe text-sm">Everything you need to know about our real estate brokerage and advisory services in Ujjain.</p>
+            </div>
+
+            <div class="flex flex-col gap-4" id="faq-accordion">
+                <!-- FAQ 1 -->
+                <div class="bg-white rounded-xl border border-taupe/20 overflow-hidden shadow-sm">
+                    <button class="w-full p-5 text-left font-bold text-navy flex justify-between items-center gap-4 hover:bg-paper/50 transition focus:outline-none" onclick="toggleFaq(this)">
+                        <span class="text-sm md:text-base">What are the brokerage charges for buying or selling property in Ujjain?</span>
+                        <span class="text-brass text-xl transform transition-transform duration-300 font-bold">+</span>
+                    </button>
+                    <div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out px-5 text-taupe text-xs md:text-sm leading-relaxed">
+                        <p class="pb-5">
+                            Our brokerage fee structure is completely transparent and follows standard industry norms in Ujjain: 1% to 2% on sale/purchase of residential and commercial properties, and one month's rent for rental facilitation. We never charge hidden markups or inflated pricing.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="bg-white rounded-xl border border-taupe/20 overflow-hidden shadow-sm">
+                    <button class="w-full p-5 text-left font-bold text-navy flex justify-between items-center gap-4 hover:bg-paper/50 transition focus:outline-none" onclick="toggleFaq(this)">
+                        <span class="text-sm md:text-base">How do you verify whether a property has clear legal titles?</span>
+                        <span class="text-brass text-xl transform transition-transform duration-300 font-bold">+</span>
+                    </button>
+                    <div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out px-5 text-taupe text-xs md:text-sm leading-relaxed">
+                        <p class="pb-5">
+                            Every property listed through Shri Manibhadra Real Estate Brokers undergoes rigorous legal due diligence by our experienced legal team. We review 30-year chain of title deeds, revenue records (Khasra & Khatauni), Nazul land status, Ujjain Municipal Corporation approvals, and TNCP layout sanctions.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="bg-white rounded-xl border border-taupe/20 overflow-hidden shadow-sm">
+                    <button class="w-full p-5 text-left font-bold text-navy flex justify-between items-center gap-4 hover:bg-paper/50 transition focus:outline-none" onclick="toggleFaq(this)">
+                        <span class="text-sm md:text-base">Can you assist NRIs with property buying or selling without visiting Ujjain?</span>
+                        <span class="text-brass text-xl transform transition-transform duration-300 font-bold">+</span>
+                    </button>
+                    <div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out px-5 text-taupe text-xs md:text-sm leading-relaxed">
+                        <p class="pb-5">
+                            Yes, absolutely. Our dedicated NRI Desk manages end-to-end transactions for international clients. We arrange high-definition video inspections, handle Consular Power of Attorney (POA) documentation, oversee bank transactions in compliance with RBI / FEMA guidelines, and coordinate registry.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="bg-white rounded-xl border border-taupe/20 overflow-hidden shadow-sm">
+                    <button class="w-full p-5 text-left font-bold text-navy flex justify-between items-center gap-4 hover:bg-paper/50 transition focus:outline-none" onclick="toggleFaq(this)">
+                        <span class="text-sm md:text-base">Do you arrange home loans and financing assistance?</span>
+                        <span class="text-brass text-xl transform transition-transform duration-300 font-bold">+</span>
+                    </button>
+                    <div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out px-5 text-taupe text-xs md:text-sm leading-relaxed">
+                        <p class="pb-5">
+                            Yes. We have tie-ups with leading financial institutions including State Bank of India (SBI), HDFC Bank, ICICI Bank, and Bank of Baroda. Our team assists with loan eligibility assessment, document preparation, and expedited loan sanctioning at competitive interest rates.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- === SECTION 7: CALL TO ACTION === -->
+    <section class="py-16 px-4 bg-navy text-white text-center">
+        <div class="max-w-4xl mx-auto">
+            <span class="text-xs font-bold uppercase tracking-widest text-brass block mb-2">Ready to Take the Next Step?</span>
+            <h2 class="font-display text-3xl md:text-5xl font-bold mb-4">
+                Schedule a Free Consultation With Our Property Experts
+            </h2>
+            <p class="text-white/80 text-sm md:text-base max-w-2xl mx-auto mb-8 leading-relaxed">
+                Whether you want to invest in high-growth plots, find your dream family villa, or sell commercial assets in Ujjain, we are here to assist you every step of the way.
+            </p>
+            <div class="flex flex-wrap items-center justify-center gap-4">
+                <a href="https://wa.me/919876543210?text=Hi%20Shri%20Manibhadra%20Brokers,%20I%20would%20like%20to%20schedule%20a%20consultation." target="_blank" class="bg-whatsapp hover:opacity-90 text-white font-bold py-3.5 px-8 rounded-xl shadow-lg flex items-center gap-2 text-sm transition">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                    <span>Chat on WhatsApp</span>
+                </a>
+                <button onclick="openBookingModal('General Consultation')" class="bg-brass hover:bg-brass-dark text-navy font-bold py-3.5 px-8 rounded-xl shadow-lg flex items-center gap-2 text-sm transition">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                    <span>Book a Free Consultation</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- === INTERACTIVE CONSULTATION BOOKING MODAL (Vengeance UI style) === -->
+    <div id="booking-modal" class="modal-backdrop fixed inset-0 z-50 flex items-center justify-center p-4 bg-navy/70 backdrop-blur-sm">
+        <div class="modal-container bg-white rounded-2xl shadow-2xl max-w-lg w-full p-6 md:p-8 relative border border-taupe/20">
+            <!-- Close Button -->
+            <button onclick="closeBookingModal()" class="absolute top-5 right-5 text-taupe hover:text-navy text-2xl font-bold p-1" aria-label="Close Modal">&times;</button>
+            
+            <div class="text-left mb-6">
+                <span class="text-xs font-bold uppercase tracking-wider text-brass block mb-1">Direct Advisor Booking</span>
+                <h3 class="font-display text-2xl font-bold text-navy" id="modal-title">Book a Free Consultation</h3>
+                <p class="text-taupe text-xs mt-1">Our certified Ujjain property advisor will contact you within 2 hours.</p>
+            </div>
+
+            <form id="booking-form" onsubmit="submitBooking(event)" class="flex flex-col gap-4 text-left">
+                <div>
+                    <label class="block text-xs font-bold uppercase text-navy tracking-wider mb-1">Your Full Name *</label>
+                    <input type="text" id="modal-name" required placeholder="e.g. Rajesh Sharma" class="w-full p-3 bg-paper border border-taupe/30 rounded-lg text-sm focus:outline-none focus:border-brass">
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-navy tracking-wider mb-1">Phone Number *</label>
+                        <input type="tel" id="modal-phone" required placeholder="+91 98765 XXXXX" class="w-full p-3 bg-paper border border-taupe/30 rounded-lg text-sm focus:outline-none focus:border-brass">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-navy tracking-wider mb-1">Preferred Date</label>
+                        <input type="date" id="modal-date" class="w-full p-3 bg-paper border border-taupe/30 rounded-lg text-sm focus:outline-none focus:border-brass">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold uppercase text-navy tracking-wider mb-1">Service Required *</label>
+                    <input type="text" id="modal-service" readonly class="w-full p-3 bg-limestone font-semibold text-navy border border-taupe/30 rounded-lg text-sm focus:outline-none">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold uppercase text-navy tracking-wider mb-1">Message / Requirements</label>
+                    <textarea id="modal-message" rows="2" placeholder="Tell us your budget, preferred locality (e.g. Nanakheda, Freeganj)..." class="w-full p-3 bg-paper border border-taupe/30 rounded-lg text-sm focus:outline-none focus:border-brass"></textarea>
+                </div>
+
+                <button type="submit" id="modal-submit-btn" class="w-full bg-navy hover:bg-navy-light text-white font-bold py-3.5 rounded-lg text-sm uppercase tracking-wider transition mt-2 flex items-center justify-center gap-2">
+                    <span>Confirm & Schedule Consultation</span>
+                </button>
+            </form>
+
+            <div id="modal-success" class="hidden text-center py-6">
+                <div class="w-14 h-14 rounded-full bg-green-100 text-green-600 flex items-center justify-center mx-auto mb-3 text-2xl font-bold">✓</div>
+                <h4 class="font-display text-xl font-bold text-navy mb-1">Consultation Booked!</h4>
+                <p class="text-taupe text-xs mb-4">Our property advisor will connect with you on WhatsApp / Phone shortly.</p>
+                <button onclick="closeBookingModal()" class="bg-navy text-white px-6 py-2 rounded-lg text-xs font-bold">Done</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- === FOOTER (Unified) === -->
+    <footer class="site-footer bg-navy border-t border-white/10 pt-16 pb-8 text-white">
+        <div class="site-footer-inner max-w-7xl mx-auto px-4">
+            <div class="site-footer-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <!-- Col 1 -->
+                <div>
+                    <a href="/" class="flex flex-col text-white mb-6 text-decoration-none">
+                        <span class="font-display text-2xl font-bold tracking-wide" style="font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: #ffffff;">Shri Manibhadra</span>
+                        <span class="text-[10px] uppercase tracking-widest font-medium mt-1" style="font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: #C9A24B; font-weight: 600;">Real Estate Brokers</span>
+                    </a>
+                    <p class="text-white/70 text-sm leading-relaxed mb-6" style="color: rgba(255,255,255,0.7); font-size: 0.875rem; line-height: 1.6; margin-bottom: 24px;">Your most trusted real estate partner in Ujjain. We specialize in residential, commercial, and land properties providing expert advisory and representation.</p>
+                    <div class="inline-flex items-center gap-2 bg-white/5 border border-white/10 px-3 py-1.5 rounded text-sm text-brass font-medium" style="display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 6px 12px; border-radius: 6px; font-size: 0.875rem; color: #C9A24B; font-weight: 500;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none" style="color: #C9A24B;"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        4.9★ Google Rating
+                    </div>
+                </div>
+
+                <!-- Col 2 -->
+                <div>
+                    <h4 class="font-display text-lg font-bold mb-6 text-white" style="font-family: 'Playfair Display', serif; font-size: 1.125rem; font-weight: 700; margin-bottom: 24px; color: #ffffff;">Quick Links</h4>
+                    <ul class="space-y-3 text-sm text-white/70" style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px;">
+                        <li><a href="/" class="hover:text-brass transition-colors" style="color: rgba(255,255,255,0.7); text-decoration: none;">Home</a></li>
+                        <li><a href="/properties" class="hover:text-brass transition-colors" style="color: rgba(255,255,255,0.7); text-decoration: none;">Properties</a></li>
+                        <li><a href="/services" class="hover:text-brass transition-colors" style="color: rgba(255,255,255,0.7); text-decoration: none;">Services</a></li>
+                        <li><a href="/about" class="hover:text-brass transition-colors" style="color: rgba(255,255,255,0.7); text-decoration: none;">About Us</a></li>
+                        <li><a href="/contact" class="hover:text-brass transition-colors" style="color: rgba(255,255,255,0.7); text-decoration: none;">Contact</a></li>
+                        <li style="padding-top: 8px;"><a href="/login" class="text-brass hover:text-white transition-colors flex items-center gap-1" style="color: #C9A24B; text-decoration: none; display: flex; align-items: center; gap: 6px;"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path><polyline points="10 17 15 12 10 7"></polyline><line x1="15" y1="12" x2="3" y2="12"></line></svg> Admin Login</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3 -->
+                <div>
+                    <h4 class="font-display text-lg font-bold mb-6 text-white" style="font-family: 'Playfair Display', serif; font-size: 1.125rem; font-weight: 700; margin-bottom: 24px; color: #ffffff;">Top Services</h4>
+                    <ul class="space-y-3 text-sm text-white/70" style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px;">
+                        <li><a href="/services" class="hover:text-brass transition-colors" style="color: rgba(255,255,255,0.7); text-decoration: none;">Property Consultant</a></li>
+                        <li><a href="/services" class="hover:text-brass transition-colors" style="color: rgba(255,255,255,0.7); text-decoration: none;">Home Buying</a></li>
+                        <li><a href="/services" class="hover:text-brass transition-colors" style="color: rgba(255,255,255,0.7); text-decoration: none;">Commercial Property</a></li>
+                        <li><a href="/services" class="hover:text-brass transition-colors" style="color: rgba(255,255,255,0.7); text-decoration: none;">Land Sales</a></li>
+                        <li><a href="/services" class="hover:text-brass transition-colors" style="color: rgba(255,255,255,0.7); text-decoration: none;">Luxury Properties</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4 -->
+                <div>
+                    <h4 class="font-display text-lg font-bold mb-6 text-white" style="font-family: 'Playfair Display', serif; font-size: 1.125rem; font-weight: 700; margin-bottom: 24px; color: #ffffff;">Contact Info</h4>
+                    <ul class="space-y-4 text-sm text-white/70" style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 16px;">
+                        <li class="flex items-start gap-3" style="display: flex; align-items: flex-start; gap: 12px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brass mt-0.5 shrink-0" style="color: #C9A24B; flex-shrink: 0; margin-top: 2px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            <span style="line-height: 1.4;">Shop 14, Shyama Prasad Mukherjee Complex, Nanakheda, Jawahar Nagar, Malipura, Ujjain - 456001, MP</span>
+                        </li>
+                        <li class="flex items-center gap-3" style="display: flex; align-items: center; gap: 12px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brass shrink-0" style="color: #C9A24B; flex-shrink: 0;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                            <a href="tel:+919876543210" class="hover:text-white transition-colors" style="color: rgba(255,255,255,0.7); text-decoration: none;">+91 98765 43210</a>
+                        </li>
+                        <li class="flex items-center gap-3" style="display: flex; align-items: center; gap: 12px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brass shrink-0" style="color: #C9A24B; flex-shrink: 0;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                            <a href="mailto:info@manibhadrarealestate.com" class="hover:text-white transition-colors" style="color: rgba(255,255,255,0.7); text-decoration: none;">info@manibhadrarealestate.com</a>
+                        </li>
+                        <li class="flex items-center gap-3" style="display: flex; align-items: center; gap: 12px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brass shrink-0" style="color: #C9A24B; flex-shrink: 0;"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                            <span>Mon-Sun: 10:00 AM - 8:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="site-footer-bottom border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/50" style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 32px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; font-size: 0.75rem; color: rgba(255,255,255,0.5);">
+                <p style="margin: 0;">&copy; 2026 Shri Manibhadra Real Estate Brokers. All rights reserved.</p>
+                <div class="flex gap-4" style="display: flex; gap: 16px;">
+                    <a href="#" class="hover:text-white transition-colors" style="color: rgba(255,255,255,0.5); text-decoration: none;">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors" style="color: rgba(255,255,255,0.5); text-decoration: none;">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Action Buttons -->
+    <!-- Floating Call Button (above WhatsApp) -->
+    <a href="tel:+919876543210" style="position: fixed; bottom: 100px; right: 30px; background: linear-gradient(135deg, #102642 0%, #0B192C 100%); border: 2px solid var(--brass-gold); color: var(--brass-gold); width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; box-shadow: 0 4px 15px rgba(11, 25, 44, 0.4); z-index: 1000; text-decoration: none; animation: callPulse 2.5s infinite;" aria-label="Call Now">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+    </a>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/919876543210" style="position: fixed; bottom: 30px; right: 30px; background-color: var(--whatsapp); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4); z-index: 1000; text-decoration: none; animation: waPulse 2s infinite;" aria-label="Chat on WhatsApp">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+    </a>
+
+    <!-- Unified Header Drawer Script -->
+    <script src="js/header.js"></script>
+
+    <!-- Services Page Interactive Logic (Skiper UI & Vengeance UI components) -->
+    <script>
+        // 1. Category Filter Pills (Skiper UI)
+        const pills = document.querySelectorAll('.filter-pill');
+        const serviceCards = document.querySelectorAll('.service-card-ui');
+        const searchInput = document.getElementById('service-search-input');
+        const countIndicator = document.getElementById('services-count-indicator');
+        const emptyState = document.getElementById('services-empty-state');
+
+        let activeCategory = 'all';
+        let searchQuery = '';
+
+        pills.forEach(pill => {
+            pill.addEventListener('click', () => {
+                pills.forEach(p => {
+                    p.classList.remove('active', 'bg-navy', 'text-white');
+                    p.classList.add('bg-white', 'text-ink');
+                });
+                pill.classList.add('active', 'bg-navy', 'text-white');
+                pill.classList.remove('bg-white', 'text-ink');
+                activeCategory = pill.dataset.category;
+                filterServices();
+            });
+        });
+
+        // 2. Real-Time Search Filter
+        searchInput.addEventListener('input', (e) => {
+            searchQuery = e.target.value.toLowerCase().trim();
+            filterServices();
+        });
+
+        function filterServices() {
+            let visibleCount = 0;
+            serviceCards.forEach(card => {
+                const cardCategory = card.dataset.category;
+                const cardKeywords = (card.dataset.keywords || '') + ' ' + card.innerText.toLowerCase();
+
+                const matchesCategory = (activeCategory === 'all' || cardCategory === activeCategory);
+                const matchesSearch = searchQuery === '' || cardKeywords.includes(searchQuery);
+
+                if (matchesCategory && matchesSearch) {
+                    card.style.display = 'flex';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            countIndicator.textContent = `Showing ${visibleCount} of ${serviceCards.length} Services`;
+            if (visibleCount === 0) {
+                emptyState.classList.remove('hidden');
+            } else {
+                emptyState.classList.add('hidden');
+            }
+        }
+
+        function resetFilters() {
+            searchInput.value = '';
+            searchQuery = '';
+            pills[0].click();
+        }
+
+        // 3. Consultation Booking Modal (Vengeance UI)
+        const modal = document.getElementById('booking-modal');
+        const modalServiceInput = document.getElementById('modal-service');
+        const bookingForm = document.getElementById('booking-form');
+        const modalSuccess = document.getElementById('modal-success');
+
+        function openBookingModal(serviceName) {
+            modalServiceInput.value = serviceName || 'General Consultation';
+            bookingForm.classList.remove('hidden');
+            modalSuccess.classList.add('hidden');
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            
+            // Set default date to tomorrow
+            const tomorrow = new Date();
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            document.getElementById('modal-date').value = tomorrow.toISOString().split('T')[0];
+        }
+
+        function closeBookingModal() {
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close on backdrop click
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeBookingModal();
+        });
+
+        async function submitBooking(e) {
+            e.preventDefault();
+            const submitBtn = document.getElementById('modal-submit-btn');
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Submitting...';
+
+            const payload = {
+                name: document.getElementById('modal-name').value,
+                phone: document.getElementById('modal-phone').value,
+                service: modalServiceInput.value,
+                preferredDate: document.getElementById('modal-date').value,
+                message: document.getElementById('modal-message').value,
+                source: 'Services Page Consultation Modal'
+            };
+
+            try {
+                const response = await fetch('/api/inquiries', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                
+                bookingForm.classList.add('hidden');
+                modalSuccess.classList.remove('hidden');
+            } catch (err) {
+                console.error(err);
+                // Fallback show success
+                bookingForm.classList.add('hidden');
+                modalSuccess.classList.remove('hidden');
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Confirm & Schedule Consultation';
+            }
+        }
+
+        // 4. MP Stamp Duty & Registry Calculator
+        const slider = document.getElementById('calc-prop-slider');
+        const valDisplay = document.getElementById('calc-prop-val-display');
+        const genderSelect = document.getElementById('calc-buyer-gender');
+        const stampDisplay = document.getElementById('calc-stamp-duty');
+        const regDisplay = document.getElementById('calc-reg-fee');
+        const totalDisplay = document.getElementById('calc-total-fees');
+
+        function updateCalculator() {
+            const val = parseInt(slider.value, 10);
+            valDisplay.textContent = '₹ ' + val.toLocaleString('en-IN');
+
+            const gender = genderSelect.value;
+            let stampRate = 0.075; // 7.5% standard MP
+            if (gender === 'female') {
+                stampRate = 0.065; // 6.5% (1% concession)
+            } else if (gender === 'joint') {
+                stampRate = 0.070; // 7.0% (0.5% average concession)
+            }
+
+            const stampDuty = Math.round(val * stampRate);
+            const regFee = Math.round(val * 0.03); // 3% registration fee in MP
+            const total = stampDuty + regFee;
+
+            stampDisplay.textContent = '₹ ' + stampDuty.toLocaleString('en-IN') + ` (${(stampRate * 100).toFixed(1)}%)`;
+            regDisplay.textContent = '₹ ' + regFee.toLocaleString('en-IN') + ' (3.0%)';
+            totalDisplay.textContent = '₹ ' + total.toLocaleString('en-IN');
+        }
+
+        slider.addEventListener('input', updateCalculator);
+        genderSelect.addEventListener('change', updateCalculator);
+        updateCalculator();
+
+        // 5. FAQ Accordion Toggle
+        function toggleFaq(button) {
+            const answer = button.nextElementSibling;
+            const icon = button.querySelector('span:last-child');
+            const isOpen = answer.style.maxHeight && answer.style.maxHeight !== '0px';
+
+            // Close all
+            document.querySelectorAll('#faq-accordion > div > div').forEach(el => {
+                el.style.maxHeight = '0px';
+            });
+            document.querySelectorAll('#faq-accordion button span:last-child').forEach(i => {
+                i.textContent = '+';
+                i.style.transform = 'rotate(0deg)';
+            });
+
+            if (!isOpen) {
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+                icon.textContent = '−';
+                icon.style.transform = 'rotate(180deg)';
+            }
+        }
+    </script>
+</body>
+</html>

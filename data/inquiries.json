@@ -1,0 +1,41 @@
+[
+  {
+    "id": "inq-20260919-001",
+    "name": "Rajeshwar Sharma",
+    "phone": "+91 98260 12345",
+    "email": "rajeshwar.sharma@example.com",
+    "propertyId": "prop-ujj-001",
+    "propertyTitle": "Emerald Horizon Luxury 3 BHK Flat",
+    "serviceInterest": "Luxury properties",
+    "message": "Interested in scheduling a site visit this Sunday morning with family.",
+    "source": "web_form",
+    "status": "new",
+    "timestamp": "2026-09-19T09:45:00.000Z"
+  },
+  {
+    "id": "inq-20260919-002",
+    "name": "Amitabh Jain",
+    "phone": "+91 94250 88776",
+    "email": "amitabh.jain@jaintrade.com",
+    "propertyId": "prop-ujj-002",
+    "propertyTitle": "Prime Commercial Retail Shop",
+    "serviceInterest": "Commercial property buying and sales",
+    "message": "Need pricing breakdown and rental yield estimates for Shop 14.",
+    "source": "whatsapp_click",
+    "status": "contacted",
+    "timestamp": "2026-09-19T10:15:00.000Z"
+  },
+  {
+    "id": "inq-20260918-003",
+    "name": "Sunita Patel",
+    "phone": "+91 98270 54321",
+    "email": "sunita.patel@gmail.com",
+    "propertyId": "prop-ujj-004",
+    "propertyTitle": "Prime Residential Colony Plot",
+    "serviceInterest": "Purchase and sell plots land",
+    "message": "Inquiring about registry costs and bank loan approval for Sector B plot.",
+    "source": "web_form",
+    "status": "followup",
+    "timestamp": "2026-09-18T16:30:00.000Z"
+  }
+]
