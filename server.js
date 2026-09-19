@@ -15,6 +15,7 @@ const JWT_SECRET = 'shri_manibhadra_jwt_secret_2026';
 app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(__dirname));
 
 // Helper functions
 async function readJSON(filePath) {

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Shri Manibhadra Real Estate</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="css/trs-style.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body class="admin-body">
+    <!-- Sidebar -->
+    <aside class="admin-sidebar">
+        <div class="sidebar-header">
+            <h2 class="sidebar-title">Shri Manibhadra</h2>
+            <p class="sidebar-subtitle">Admin Portal</p>
+        </div>
+        <nav class="sidebar-nav">
+            <button class="nav-item active" data-target="view-dashboard">
+                <i data-lucide="bar-chart-2"></i> Dashboard
+            </button>
+            <button class="nav-item" data-target="view-properties">
+                <i data-lucide="building"></i> Properties
+            </button>
+            <button class="nav-item" data-target="view-inquiries">
+                <i data-lucide="message-square"></i> Inquiries
+            </button>
+            <button class="nav-item" data-target="view-settings">
+                <i data-lucide="settings"></i> Settings
+            </button>
+        </nav>
+        <div class="sidebar-footer">
+            <button id="logout-btn" class="nav-item text-danger">
+                <i data-lucide="log-out"></i> Logout
+            </button>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="admin-main">
+        <!-- Dashboard View -->
+        <div id="view-dashboard" class="view-section active">
+            <header class="view-header">
+                <h1>Welcome back, Admin</h1>
+            </header>
+            
+            <div class="kpi-grid">
+                <div class="kpi-card border-blue">
+                    <div class="kpi-icon blue"><i data-lucide="building"></i></div>
+                    <div class="kpi-data">
+                        <h3 id="kpi-properties">-</h3>
+                        <p>Active Properties</p>
+                    </div>
+                </div>
+                <div class="kpi-card border-green">
+                    <div class="kpi-icon green"><i data-lucide="message-square"></i></div>
+                    <div class="kpi-data">
+                        <h3 id="kpi-inquiries">-</h3>
+                        <p>Total Inquiries</p>
+                    </div>
+                </div>
+                <div class="kpi-card border-purple">
+                    <div class="kpi-icon purple"><i data-lucide="eye"></i></div>
+                    <div class="kpi-data">
+                        <h3 id="kpi-views">-</h3>
+                        <p>Total Views</p>
+                    </div>
+                </div>
+                <div class="kpi-card border-gold">
+                    <div class="kpi-icon gold"><i data-lucide="percent"></i></div>
+                    <div class="kpi-data">
+                        <h3 id="kpi-conversion">-</h3>
+                        <p>Conversion Rate</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="charts-row">
+                <div class="chart-card">
+                    <h3>Views Trend (Last 7 Days)</h3>
+                    <canvas id="viewsChart"></canvas>
+                </div>
+                <div class="chart-card">
+                    <h3>Inquiries by Category</h3>
+                    <canvas id="categoryChart"></canvas>
+                </div>
+            </div>
+
+            <div class="table-card">
+                <h3>Recent Inquiries</h3>
+                <div class="table-responsive">
+                    <table class="admin-table" id="recent-inquiries-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Phone</th>
+                                <th>Property</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Populated via JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Properties View -->
+        <div id="view-properties" class="view-section">
+            <header class="view-header">
+                <h1>Property Listings</h1>
+                <button class="btn btn-primary" id="btn-add-property">
+                    <i data-lucide="plus"></i> Add New Property
+                </button>
+            </header>
+
+            <div class="filter-bar">
+                <input type="text" id="prop-search" placeholder="Search properties...">
+                <select id="prop-category-filter">
+                    <option value="">All Categories</option>
+                    <option value="residential">Residential</option>
+                    <option value="commercial">Commercial</option>
+                    <option value="plots">Plots/Land</option>
+                    <option value="luxury">Luxury</option>
+                </select>
+                <select id="prop-status-filter">
+                    <option value="">All Statuses</option>
+                    <option value="active">Active</option>
+                    <option value="under_offer">Under Offer</option>
+                    <option value="sold">Sold</option>
+                </select>
+            </div>
+
+            <div class="table-card">
+                <div class="table-responsive">
+                    <table class="admin-table" id="properties-table">
+                        <thead>
+                            <tr>
+                                <th>Image</th>
+                                <th>Title</th>
+                                <th>Category</th>
+                                <th>Price</th>
+                                <th>Locality</th>
+                                <th>Status</th>
+                                <th>Views</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Populated via JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Inquiries View -->
+        <div id="view-inquiries" class="view-section">
+            <header class="view-header">
+                <h1>Leads & Inquiries</h1>
+            </header>
+
+            <div class="kpi-grid stats-bar">
+                <div class="stat-item">Total New <span id="stat-new">0</span></div>
+                <div class="stat-item">Contacted <span id="stat-contacted">0</span></div>
+                <div class="stat-item">Follow-up <span id="stat-followup">0</span></div>
+                <div class="stat-item">Closed <span id="stat-closed">0</span></div>
+            </div>
+
+            <div class="table-card">
+                <div class="table-responsive">
+                    <table class="admin-table" id="all-inquiries-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Contact</th>
+                                <th>Property</th>
+                                <th>Message</th>
+                                <th>Source</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Populated via JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Settings View (Placeholder) -->
+        <div id="view-settings" class="view-section">
+            <header class="view-header">
+                <h1>Settings</h1>
+            </header>
+            <div class="table-card">
+                <p>Settings panel implementation pending.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Property Modal -->
+    <div id="property-modal" class="modal-overlay">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h2 id="modal-title">Add New Property</h2>
+                <button class="modal-close" id="btn-close-modal"><i data-lucide="x"></i></button>
+            </div>
+            <div class="modal-body">
+                <form id="property-form">
+                    <input type="hidden" id="prop-id">
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Title</label>
+                            <input type="text" id="prop-title" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Category</label>
+                            <select id="prop-category" required>
+                                <option value="residential">Residential</option>
+                                <option value="commercial">Commercial</option>
+                                <option value="plots">Plots</option>
+                                <option value="luxury">Luxury</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Type</label>
+                            <select id="prop-type" required>
+                                <option value="Flat">Flat</option>
+                                <option value="Villa">Villa</option>
+                                <option value="Duplex">Duplex</option>
+                                <option value="Shop">Shop</option>
+                                <option value="Office">Office</option>
+                                <option value="Showroom">Showroom</option>
+                                <option value="Plot">Plot</option>
+                                <option value="Land">Land</option>
+                                <option value="Farmhouse">Farmhouse</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Price (₹)</label>
+                            <input type="number" id="prop-price" required min="0">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Area (sq.ft)</label>
+                            <input type="number" id="prop-area" required min="0">
+                        </div>
+                        <div class="form-group">
+                            <label>Bedrooms</label>
+                            <input type="number" id="prop-beds" min="0" max="20" value="0">
+                        </div>
+                        <div class="form-group">
+                            <label>Bathrooms</label>
+                            <input type="number" id="prop-baths" min="0" max="20" value="0">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Locality</label>
+                        <input type="text" id="prop-locality" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Address</label>
+                        <textarea id="prop-address" rows="2" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Location Map (Click to pick coordinates)</label>
+                        <div id="coord-picker-map"></div>
+                        <div class="form-row" style="margin-top: 10px;">
+                            <div class="form-group">
+                                <label>Latitude</label>
+                                <input type="number" id="prop-lat" step="any" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Longitude</label>
+                                <input type="number" id="prop-lng" step="any" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Image URLs (comma separated)</label>
+                        <input type="text" id="prop-images" placeholder="https://..., https://..." required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Description</label>
+                        <textarea id="prop-desc" rows="4" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Amenities (comma separated)</label>
+                        <input type="text" id="prop-amenities" placeholder="Parking, Gym, Security...">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Status</label>
+                            <select id="prop-status" required>
+                                <option value="active">Active</option>
+                                <option value="under_offer">Under Offer</option>
+                                <option value="sold">Sold</option>
+                            </select>
+                        </div>
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="prop-featured">
+                            <label for="prop-featured">Featured Property</label>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-outline" id="btn-cancel-modal">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Save Property</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="spinner"></div>
+    </div>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>lucide.createIcons();</script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>
